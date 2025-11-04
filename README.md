@@ -273,7 +273,7 @@ https://github.com/NVIDIA-NeMo/NeMo
 #### Example in real-life:  <br>
 
 1. Start with NVIDIA’s pre-trained LLM in NeMo.  <br>
-2. Fine-tune it using your hospitals document.  <br>\
+2. Fine-tune it using your hospitals document.  <br>
 3. Use NeMo tools to deploy it securely and make it respond safely.  <br>
 
 Example: Create customer supoort chatbot using NeMo.  <br>
