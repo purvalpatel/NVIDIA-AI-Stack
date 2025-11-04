@@ -153,7 +153,7 @@ AI Models + Inference runtime (TensorRT-LLM + REST API ) + GPU Optimizations.
 
 It packages, <br>
 
-**AI Models + Inference Runtime(TensorRT-LLM or Tritorn inference server ) + GPU Optimizations. **  <br>
+**AI Models + Inference Runtime(TensorRT-LLM or Tritorn inference server ) + GPU Optimizations.**  <br>
 
 - NVIDIA NIM for LLM supports Multi-instance GPU (MIG) Mode. MIG is best of smaller parameter models. ( less then 8 billion )  <br>
 
