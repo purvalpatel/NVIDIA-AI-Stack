@@ -300,6 +300,19 @@ You dont want your chatbot to talk about unrelated things or leaked info. <br>
 
 **Step 4:** Deploy using **Nvidia Triton** + **TensorRT** 
 
+#### NeMo Guardrails 
+
+Is a safety and control system for AI applications. <br>
+
+#### Nemo Inference: 
+
+The system that turns your trained model into a fast, scalable, production-ready service optimized for NVIDIA GPUs. <br>
+
+
+#### In sort: <br>
+
+Training (NeMo Framework) -> Optimization (TensorRT) -> serving (Triton/NIM)  <br>
+
 
 Big Picture:
 ----------
