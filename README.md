@@ -167,7 +167,7 @@ https://catalog.ngc.nvidia.com/search?orderBy=scoreDESC&query=nim
 
 **How NIM works ?** <br>
 
-**Step 1. **You select a model that supported by NIM.  <br>
+**Step 1.** You select a model that supported by NIM.  <br>
 
 To pull NIM image from NGC, first authenticate Nvidia container registry:  <br>
 ```
@@ -229,7 +229,7 @@ Applications (Frontend, chatbot) Sends requests (prompts) to NIM Microservice wh
 
  
 
-Note:  <br>
+**Note**:  <br>
 
 - Nvidia NIM can run custom models also.  <br>
 - You dont need to run inference enginer seperately.  <br>
