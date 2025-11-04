@@ -184,7 +184,6 @@ https://build.nvidia.com/  <br>
  
 
 #### 2. NGC:
------
 
 You can run images by pulling it from the Nvidia cloud.  <br>
 
