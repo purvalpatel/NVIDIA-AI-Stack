@@ -279,3 +279,29 @@ Total time of converting checkpoints: 00:00:19
 !cp /home/nuvo_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/tokenizer_config.json /home/nuvo_admin/.purval/output_model/trtllm_ckpt/
 !cp /home/nuvo_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/special_tokens_map.json /home/nuvo_admin/.purval/output_model/trtllm_ckpt/
 ```
+
+#### Deploy TensorRT-LLM checkpoint with NIM
+```
+# Deploy TensorRT-LLM checkpoint with NIM
+print("Deploying TensorRT-LLM checkpoint with NIM...")
+
+!echo "@dGsdfSEKaFl9_nRN" | sudo -S docker run -it --rm \
+  --name=$CONTAINER_NAME \
+  --runtime=nvidia \
+  --gpus '"device=0"' \
+  --shm-size=16GB \
+  -e NIM_MODEL_NAME="/opt/models/my_model" \
+  -e NIM_SERVED_MODEL_NAME="meta-llama/Meta-Llama-3-8B-Instruct" \
+  -e NIM_MODEL_PROFILE="tensorrt_llm" \
+  -v "$TRTLLM_CKPT_DIR:/opt/models/my_model" \
+  -v "$LOCAL_NIM_CACHE:/opt/nim/.cache" \
+  -u $(id -u) \
+  -p 8000:8000 \
+  -d \
+  $NIM_IMAGE
+```
+
+check the process:
+```
+! sudo docker ps
+```
