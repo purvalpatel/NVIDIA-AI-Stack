@@ -1,0 +1,28 @@
+Library for LLM inference and serving. <br>
+Seamless integration with huggingface models. <br>
+
+vLLM seamlessly supports most popular open-source models on HuggingFace, including:
+
+- Transformer-like LLMs (e.g., Llama)
+- Mixture-of-Expert LLMs (e.g., Mixtral, Deepseek-V2 and V3)
+- Embedding Models (e.g., E5-Mistral)
+- Multi-modal LLMs (e.g., LLaVA)
+
+### Install vLLM with Pip:
+
+1. Create virtual environment and activate it.
+```
+source ~/.vnev/bin/activate
+```
+
+2. install
+```
+pip install vllm
+```
+
+### Start inferencing or serving.
+```
+vllm serve mistralai/Mistral-7B-Instruct-v0.2 \
+  --port 8000 \
+  --tensor-parallel-size 1
+```
