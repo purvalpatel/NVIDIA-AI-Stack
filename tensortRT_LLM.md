@@ -280,21 +280,45 @@ Total time of converting checkpoints: 00:00:19
 !cp /home/nuvo_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/special_tokens_map.json /home/nuvo_admin/.purval/output_model/trtllm_ckpt/
 ```
 
+#### Now compile tensorRT-LLM engine:
+```
+# Compile TensorRT-LLM checkpoint to engine
+print("Compiling TensorRT-LLM checkpoint to engine...")
+print("This process may take several minutes depending on your hardware and optimization settings.")
+
+!docker run --rm \
+  --runtime=nvidia \
+  --gpus all \
+  --shm-size=32GB \
+  -v /home/nuvo_admin/.purval/output_model/trtllm_ckpt:/input_checkpoint -v /home/nuvo_admin/.purval/output_model/trtllm_ckpt/trtllm_engine:/output_engines \
+  -w /output_engines \
+  -u $(id -u) \
+  $NIM_IMAGE \
+  trtllm-build --checkpoint_dir /input_checkpoint \
+  --output_dir /output_engines/trtllm_engine \
+      --cluster_key H100-SXM \
+      --gemm_plugin fp8 \
+      --gpt_attention_plugin float16 \
+      --max_batch_size 32 \
+      --max_input_len 4096
+```
+
+
 #### Deploy TensorRT-LLM checkpoint with NIM
 ```
-# Deploy TensorRT-LLM checkpoint with NIM
-print("Deploying TensorRT-LLM checkpoint with NIM...")
 
-!echo "@dGsdfSEKaFl9_nRN" | sudo -S docker run -it --rm \
+# Deploy TensorRT-LLM engine with NIM
+print("Deploying optimized TensorRT-LLM engine with NIM...")
+
+!docker run -it --rm \
   --name=$CONTAINER_NAME \
   --runtime=nvidia \
-  --gpus '"device=0"' \
+  --gpus all \
   --shm-size=16GB \
   -e NIM_MODEL_NAME="/opt/models/my_model" \
   -e NIM_SERVED_MODEL_NAME="meta-llama/Meta-Llama-3-8B-Instruct" \
   -e NIM_MODEL_PROFILE="tensorrt_llm" \
-  -v "$TRTLLM_CKPT_DIR:/opt/models/my_model" \
-  -v "$LOCAL_NIM_CACHE:/opt/nim/.cache" \
+  -v /home/nuvo_admin/.purval/output_model/trtllm_ckpt/trtllm_engine:/opt/models/trtllm -v $LOCAL_NIM_CACHE:/opt/nim/.cache \
   -u $(id -u) \
   -p 8000:8000 \
   -d \
@@ -304,4 +328,28 @@ print("Deploying TensorRT-LLM checkpoint with NIM...")
 check the process:
 ```
 ! sudo docker ps
+```
+
+Test TesorRT-LLM engine deployment:
+```
+
+# Test the deployed TensorRT-LLM engine
+import time
+
+# Warm up the engine
+print("Warming up the TensorRT-LLM engine...")
+generate_text(
+    model="meta-llama/Meta-Llama-3-8B-Instruct",
+    prompt="Hello",
+    max_tokens=10
+)
+
+result = generate_text(
+    model="meta-llama/Meta-Llama-3-8B-Instruct",
+    prompt="Write a Python function to implement binary search",
+)
+
+print("TensorRT-LLM Engine Result:")
+print("=" * 50)
+print(result if result else "Failed to generate text")
 ```
