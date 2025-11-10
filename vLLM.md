@@ -26,6 +26,15 @@ vllm serve mistralai/Mistral-7B-Instruct-v0.2 \
   --port 8000 \
   --tensor-parallel-size 1
 ```
+
+If you want faster inference on GPUs like H100/H200.
+```
+vllm serve mistralai/Mistral-7B-Instruct-v0.2 \
+  --port 8000 \
+  --gpu-memory-utilization 0.95 \
+  --max-model-len 8192
+```
+
 ### Query the model using API.
 ```
 curl http://localhost:8000/v1/chat/completions \
