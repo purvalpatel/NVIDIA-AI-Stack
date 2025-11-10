@@ -26,3 +26,14 @@ vllm serve mistralai/Mistral-7B-Instruct-v0.2 \
   --port 8000 \
   --tensor-parallel-size 1
 ```
+### Query the model using API.
+```
+curl http://localhost:8000/v1/chat/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+        "model": "mistralai/Mistral-7B-Instruct-v0.2",
+        "messages": [
+          {"role": "user", "content": "Who is sachin tendulkar?"}
+        ]
+      }'
+```
