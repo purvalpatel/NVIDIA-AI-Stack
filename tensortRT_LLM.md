@@ -330,7 +330,7 @@ check the process:
 ! sudo docker ps
 ```
 
-Test TesorRT-LLM engine deployment:
+#### Test TesorRT-LLM engine deployment:
 ```
 
 # Test the deployed TensorRT-LLM engine
@@ -353,3 +353,8 @@ print("TensorRT-LLM Engine Result:")
 print("=" * 50)
 print(result if result else "Failed to generate text")
 ```
+
+Error: <br>
+ERROR 2025-11-10 08:27:45.286 utils.py:26] Profile '668b575f1701fa70a97cfeeae998b5d70b048a9b917682291bb82b67f308f80c' (tensorrt_llm) is incompatible with detected hardware. Please check the system  <br>
+information below and select a compatible profile.
+
