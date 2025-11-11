@@ -7,13 +7,12 @@ If you want **scalable production** → **Triton**. <br>
 If you want **local/offline** → **llama.cpp** / **Ollama**. <br>
 
 
-#### Below is the typical architecture in terms of working with Nvidia AI Stack:
-
+Below is the typical architecture in terms of working with Nvidia AI Stack:
+---------------------------------------------------
 Training (NeMo Framework) -> Optimization (TensorRT) -> serving (Triton/NIM)  <br>
 
 
-Big Picture:
-----------
+### Big Picture:
 
 | Layer | Tool / Framework | Mainly Used By | Purpose |
 |-------|------------------|----------------|----------|
