@@ -137,6 +137,22 @@ TensorRT-LLM reads the .safetensorts weights and converts them into a GPU-optimi
 ```
 trtllm-build --model_dir ./mistral --output_dir ./engine --dtype float16 
 ```
+Note: <br>
+- trtllm-build command will not work properly without using container because pre-created container will contain all the dependencies into container.
+
+```
+docker run -it --rm \
+  --runtime=nvidia \
+  --gpus all \
+  --shm-size=16G \
+  -v /home/nuvo_admin:/workspace \
+  nvcr.io/nvidia/tensorrt-llm:latest
+```
+Then inside the container:
+```
+cd /workspace/.purval/output_model/trtllm_ckpt
+trtllm-build --checkpoint_dir . --output_dir ./engine --dtype float16
+```
 3. run the model.  <br>
 Use TensorRT-LLM runtime or NVIDIA Triton inference server to host it.  <br>
 ```
