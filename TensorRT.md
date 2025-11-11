@@ -9,7 +9,7 @@ Tensor is and ecosystem of tools for developers to achieve high performance deep
 - TensortRT-RTX ( For RTX GPUs used for Laptops ),
 - TensortRT-Cloud. 
 <br>
-that delivers **low latency** and **high throughput** in production applications. 
+that delivers low latency and high throughput in production applications. 
 
  
 Get Started with TensorRT :
