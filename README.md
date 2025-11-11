@@ -54,3 +54,48 @@ There are 5 main types of LLM model files you will see:
 | **Fast inference on consumer GPUs (3090/4090)**  | **vLLM + safetensors**    | **vLLM**                      |
 | **Run on Mac / CPU / small GPU**                 | **GGUF**                  | **Ollama / llama.cpp**        |
 | **Fine-tune or train**                           | **PyTorch / safetensors** | **PyTorch / Transformers**    |
+
+
+Real Flow of deploying model:
+--------------------------
+When we download a model from Hugging Face, it usually comes in:
+```
+safetensors / .bin weights + config + tokenizer
+```
+
+| Runtime / Serving System               | Model Format Required          | Conversion Needed?                  | Notes                        |
+| -------------------------------------- | ------------------------------ | ----------------------------------- | ---------------------------- |
+| **PyTorch / HuggingFace Transformers** | safetensors / .bin             | ❌ No                                | Slowest but simplest         |
+| **vLLM**                               | safetensors / .bin (HF format) | ❌ No                                | Efficient, fast, easy        |
+| **ONNX Runtime**                       | .onnx                          | ✅ Convert → ONNX                    | Usually CPU or GPU inference |
+| **TensorRT-LLM**                       | `.plan` Engine                 | ✅ Convert → TRT checkpoint → Engine | Fastest on GPU (H100 / A100) |
+
+
+### If using vLLM
+```
+HuggingFace model → serve directly
+```
+
+### If using ONNX
+```
+HuggingFace model → convert to ONNX → serve ONNX
+```
+
+### If using TensorRT-LLM
+```
+HuggingFace model (.safetensors) 
+        ↓ convert_checkpoint.py
+TensorRT-LLM checkpoint
+        ↓ trtllm-build
+TensorRT Engine (.plan)
+        ↓ trtllm-infer / trtllm-serve / NIM / Triton
+```
+
+### Which path should we use ?
+| Hardware                                    | Recommended Runtime    |
+| ------------------------------------------- | ---------------------- |
+| **H100 / A100 GPU server (enterprise)**     | **TensorRT-LLM / NIM** |
+| **Single GPU consumer cards (4090 / 4080)** | **vLLM**               |
+| **CPU only**                                | **ONNX Runtime**       |
+| **Laptop / mobile**                         | **GGUF + llama.cpp**   |
+
