@@ -46,3 +46,37 @@ curl http://localhost:8000/v1/chat/completions \
         ]
       }'
 ```
+
+Another example:
+---------------
+1. Download small model from huggingface.
+```
+huggingface-cli download TinyLlama/TinyLlama-1.1B-Chat-v1.0
+```
+2. Create virtual environment with python3.10:
+```
+python3.10 -m venv vllm_env
+source vllm_env/bin/activate
+```
+Install pytorch with cuda12:
+```
+pip install torch --index-url https://download.pytorch.org/whl/cu121
+pip install vllm
+```
+
+3. Serve it with vLLM.
+```
+vllm serve /home/nuvo_admin/.cache/huggingface/hub/models--TinyLlama--TinyLlama-1.1B-Chat-v1.0/snapshots/fe8a4ea1ffedaf415f4da2f062534de366a451e6 --host 0.0.0.0 --port 8000
+```
+
+4. Test model
+This is chat model. but we can test this in below way. this may not work. 
+```
+curl http://localhost:8000/v1/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "TinyLlama-1.1B-Chat-v1.0",
+    "prompt": "Hello"
+  }'
+
+```
