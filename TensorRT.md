@@ -59,8 +59,8 @@ pip install onnx onnxruntime
  
 
 **Step 2:** Export Model to ONNX <br>
-Write pytorch model. <br>
-This creates an **ONNX** flie (**resnet50.onnx**) - a universal model format.  <br>
+- Write pytorch model. <br>
+- This creates an **ONNX** flie (**resnet50.onnx**) - a universal model format.  <br>
 
 
 **Step 3:** Convert ONNX -> TensorRT Engine  <br>
