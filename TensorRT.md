@@ -54,7 +54,8 @@ Create Python virtual environment. <br>
 ```BASH
 pip install tensorrt 
 pip install nvidia-pyindex 
-pip install onnx onnxruntime 
+pip install onnx onnxruntime
+pip install tensorrt_llm
 ```
  
 
