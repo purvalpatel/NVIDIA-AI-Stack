@@ -150,8 +150,8 @@ docker run -it --rm \
 ```
 Then inside the container:
 ```
-cd /workspace/.purval/output_model/trtllm_ckpt
-trtllm-build --checkpoint_dir . --output_dir ./engine --dtype float16
+/workspace/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.2/snapshots/63a8b081895390a26e140280378bc85ec8bce07a
+trtllm-build --model_dir . --output_dir ./engine --dtype float16
 ```
 3. run the model.  <br>
 Use TensorRT-LLM runtime or NVIDIA Triton inference server to host it.  <br>
