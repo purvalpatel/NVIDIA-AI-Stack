@@ -97,9 +97,12 @@ docker run --gpus all -p8000:8000 -v /models:/models nvcr.io/nvidia/tritonserver
 
 #### Typical workflow: 
 1. Get a model  <br>
-    e.g. LLaMA, Mistral ( Weights in .safetensorts format ) 
+    e.g. LLaMA, Mistral ( Weights in .safetensorts format )
+```
+   !huggingface-cli download meta-llama/Meta-Llama-3-8B-Instruct --local-dir "$LOCAL_MODEL_DIR" && echo "✓ Model downloaded successfully"
+```
 
-2. Convert using TensorRT-LLM tools:  <br>
+3. Convert using TensorRT-LLM tools:  <br>
 ```
 trtllm-build --model_dir ./TinyLlama --output_dir ./engine --dtype float16 
 ```
