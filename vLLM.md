@@ -1,4 +1,4 @@
-Library for LLM inference and serving. <br>
+**Library for LLM inference and serving.** <br>
 Seamless integration with huggingface models. <br>
 
 vLLM seamlessly supports most popular open-source models on HuggingFace, including:
