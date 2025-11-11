@@ -50,6 +50,7 @@ Optimization techniques includes quantization, distillation, pruning, speculativ
 
 
 **Step 1:** Install tensorRT 
+Create Python virtual environment. <br>
 ```BASH
 pip install tensorrt 
 pip install nvidia-pyindex 
