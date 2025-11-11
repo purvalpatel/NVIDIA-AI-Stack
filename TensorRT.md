@@ -66,19 +66,19 @@ pip install tensorrt_llm
 
 **Step 3:** Convert ONNX -> TensorRT Engine  <br>
 Use tensorRT tool trtexec: <br>
-```
+```BASH
 trtexec --onnx=resnet50.onnx --saveEngine=resnet50.engine --fp16 
 ```
  
 **Step 4:** Run inference <br>
-```
+```BASH
 trtexec --loadEngine=resnet50.engine --shapes=input:1x3x224x224 
 ```
  
 **Step 5:** Use Triton Inference server ( Optional ) <br>
 
 This is used for model runtime. So we can query model. <br>
-```
+```BASH
 docker run --gpus all -p8000:8000 -v /models:/models nvcr.io/nvidia/tritonserver:24.10-py3 \ 
   tritonserver --model-repository=/models 
 ```
@@ -98,16 +98,16 @@ docker run --gpus all -p8000:8000 -v /models:/models nvcr.io/nvidia/tritonserver
 #### Typical workflow: 
 1. Get a model  <br>
     e.g. LLaMA, Mistral ( Weights in .safetensorts format )
-```
+```BASH
 huggingface-cli download meta-llama/Meta-Llama-3-8B-Instruct --local-dir "$LOCAL_MODEL_DIR" && echo "✓ Model downloaded successfully"
 ```
 
 3. Convert using TensorRT-LLM tools:  <br>
-```
+```BASH
 trtllm-build --model_dir ./TinyLlama --output_dir ./engine --dtype float16 
 ```
 3. Run it with TensorRT-LLM runtime(trtllm-serv) or NVIDIA triton runtime server:  <br>
-```
+```BASH
 trtllm-serve ./engine 
 ```
 3. You now have an API endpoint (like openAI’s API) that runs the model at GPU-optimized speed.  <br>
@@ -115,7 +115,7 @@ trtllm-serve ./engine
  
 
 **Full architecture:  <br>**
-```
+```BASH
 model.safetensors  →  TensorRT-LLM build  →  model.engine  →  fast inference 
 ```
  
@@ -134,13 +134,13 @@ Model files will be like, .safetensors, config.json, tokenizer.json  <br>
 2. Convert to TensorRT-LLM  <br>
 
 TensorRT-LLM reads the .safetensorts weights and converts them into a GPU-optimized binary engine.  <br>
-```
+```BASH
 trtllm-build --model_dir ./mistral --output_dir ./engine --dtype float16 
 ```
 Note: <br>
 - trtllm-build command will not work properly without using container because pre-created container will contain all the dependencies into container.
 
-```
+```BASH
 docker run -it --rm \
   --runtime=nvidia \
   --gpus all \
@@ -149,18 +149,18 @@ docker run -it --rm \
   nvcr.io/nvidia/tensorrt-llm/release:1.2.0rc2
 ```
 Then inside the container:
-```
+```BASH
 /workspace/.cache/huggingface/hub/models--mistralai--Mistral-7B-Instruct-v0.2/snapshots/63a8b081895390a26e140280378bc85ec8bce07a
 trtllm-build --model_dir . --output_dir ./engine --dtype float16
 ```
 3. run the model.  <br>
 Use TensorRT-LLM runtime or NVIDIA Triton inference server to host it.  <br>
-```
+```BASH
 trtllm-serve ./engine 
 ```
  
 Now you can query it like:  <br>
-```
+```BASH
 curl -X POST http://localhost:8000/v1/completions -d '{"prompt":"Hello!"}'
 ```
 
