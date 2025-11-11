@@ -14,6 +14,7 @@ Training (NeMo Framework) -> Optimization (TensorRT) -> serving (Triton/NIM)  <b
 
 Big Picture:
 ----------
+
 | Layer | Tool / Framework | Mainly Used By | Purpose |
 |-------|------------------|----------------|----------|
 | 🧩 **Model Development** | **NeMo Framework** | Data Scientists / ML Researchers | Build, train, and fine-tune AI models (LLMs, ASR, etc.) |
