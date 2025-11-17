@@ -99,3 +99,14 @@ TensorRT Engine (.plan)
 | **CPU only**                                | **ONNX Runtime**       |
 | **Laptop / mobile**                         | **GGUF + llama.cpp**   |
 
+
+
+Install Huggingface-cli:
+-------------------------
+```
+apt install python3.10-venv
+python3 -m venv ~/hf-venv
+source hf-venv/bin/activate
+pip install --upgrade huggingface_hub
+
+```
