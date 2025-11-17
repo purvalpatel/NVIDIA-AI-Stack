@@ -110,3 +110,9 @@ source hf-venv/bin/activate
 pip install --upgrade huggingface_hub
 
 ```
+
+Download model from hf:
+```
+hf download distilbert/distilbert-base-uncased
+```
+
