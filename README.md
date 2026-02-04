@@ -12,12 +12,24 @@ Nvidia Software stack:
 ---
 | Key | Value |
 | --- | --- |
-| CNN | Convolutional Neural Network <br> Detect Patterns. Object detection in security cameras. |
+| CUDA | Software library interact with GPU directly |
 | cuDNN | CUDA Deep Neural Network library |
 | TensorRT | Inference |
 
 - All are tightly integrated with AI
 - Powers training and Inference
+
+- CNN : Convolutional Neural Network <br> Detect Patterns. Object detection in security cameras.
+- Tritorn - Supports multi-framework model deploymenbt
+
+
+
+Nvidia GPU Cloud (NGC):
+--------------
+- Registry for GPU containers
+- Optimized
+- Pre-trained containers
+- Secured production ready assets
 
 
 ## Below are some best inference runtimes:
