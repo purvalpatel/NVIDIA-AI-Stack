@@ -102,12 +102,26 @@ Infiband:
 - RDMA - Zero-Copy Memory access
 - Supercomputers
 
-## RDMA
+## RDMA and Direct Storage
+### RDMA:
 - Data directly trasnfer to GPU memory
 - Without CPU passing
 - Reduce Latency
 - Often used with Infiniband.
 
+#### Direct Storage access GPU
+- Extends RDMA Concepts
+- Allows NVMe drives, NFS servers can transfer data directly to GPU memory.
+- This is possible with `CUDA`, `cFile`, `DALI`
+- Supported A100, H100 and blueField
+
+Why RDMA and Direct Storage Matter ?
+-------------------
+- Speed up training and inference
+- Involves GPU utilization
+- Reduce GPU load and cost
+- Supports large batch streaming and multi-node clusters.
+- Enable Realtime Data ingetion
 
 
 ## Below are some best inference runtimes:
