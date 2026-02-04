@@ -1,4 +1,25 @@
 
+Nvidia AI Stack overview
+-----
+- Harware : GPUs, CPUs, DPUs, NVLink, NVSwitch
+- Software : CUDA, cuDNN, Drivers
+- LKibraries/SDK : TensorRT, NCCL, RAPIDS
+- AI Frameworks: PyTorch, TensorFlow, JAX
+- Tools: Triton, NGC, DeepStream, K8s
+
+
+Nvidia Software stack:
+---
+| Key | Value |
+| --- | --- |
+| CNN | Convolutional Neural Network <br> Detect Patterns. Object detection in security cameras. |
+| cuDNN | CUDA Deep Neural Network library |
+| TensorRT | Inference |
+
+- All are tightly integrated with AI
+- Powers training and Inference
+
+
 ## Below are some best inference runtimes:
 
 If you want **raw speed** → **TensorRT-LLM**. <br>
