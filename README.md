@@ -31,6 +31,84 @@ Nvidia GPU Cloud (NGC):
 - Pre-trained containers
 - Secured production ready assets
 
+Nvidia GPU Hardware and software architecture:
+---
+- SMs - Core building blocks of GPU
+        - Handle thread execution and compute operation
+        - A100 GPU - has 108 SMs, H100 Has 132 SMs.
+        - Each SMs Runs threads and parallalism
+
+- TensorCores - Built for deep learning
+        - Accelarate F16, BF16, INT8, TF32, FP8
+        - Used in training + Inference
+        - Specialized cores for matrix
+
+  SMs + Tensor Cores Accelarate AI
+- NVLink - High Speed GPU into connect faster than PCIs.
+        - Used in DGX and Suprtcomputer
+        - Supports multi-model and multi-GPU.
+
+
+- Powerful datacenter GPUS - A100, H100, L40s, B200
+
+- A100 : General purpose AI Powerhouse
+        - In Most of the provides this is the default choice,
+- H100 : Extreeme performance
+        - Hopper architecture
+        - FP8 Supports
+        - LLM Training, GPU Workloads.
+- L40S : Idle for enterprise inference + Graphics
+        - Ada Lovelance Architecture
+        - AI + Graphics + Video
+- B200 : Designed for future scale Gen AI.
+        - Blackwell architecture
+
+MIG 
+--
+- Multi instance GPU
+
+
+DCGM
+---
+- Monitoring tool
+- Detects bottlenecks early
+- Prometheus + Grafana
+
+
+Slurm - Mostly used in GPU job scheduling
+
+Infrastructure Stack - Storage, Networking and Virtualization
+------
+### GPU Accelarated Storage - Direct data path
+- Generally CPU process and align tasks and provides to GPU. and GPU loads into memory. but for the large datasets its not enough. `CPU -> Memory - GPU`
+- For large datasets - latency will be high.
+- GPU Accelarated storage bypassthe CPU and loads into GPU memory directly. PCIs and NVLink
+
+- GPUDirectStorage (GDS)
+- NVMe Over Fabrics
+- NVLink interconnects
+- DALI
+- Compatible with H100, A100
+
+### Networking - infiband vs. Ethernet
+- Ethernet is slow
+- 1G to 400G speed
+- Low Latency
+- Packet loss
+
+Infiband:
+- 100G-800G Transfer
+- Ultra-Low Latency
+- RDMA - Zero-Copy Memory access
+- Supercomputers
+
+## RDMA
+- Data directly trasnfer to GPU memory
+- Without CPU passing
+- Reduce Latency
+- Often used with Infiniband.
+
+
 
 ## Below are some best inference runtimes:
 
