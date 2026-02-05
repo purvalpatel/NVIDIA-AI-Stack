@@ -66,6 +66,13 @@ Nvidia GPU Hardware and software architecture:
 MIG 
 --
 - Multi instance GPU
+- Hardware level partitioning
+
+vGPU
+--
+- Software level partitioning
+- Hypervisor based
+- One physical GPU can be converted into multiple vGPUs and that vGPU can be assigned to VM, User, Containers.
 
 
 DCGM
@@ -123,7 +130,54 @@ Why RDMA and Direct Storage Matter ?
 - Supports large batch streaming and multi-node clusters.
 - Enable Realtime Data ingetion
 
+DPU and Bluefield
+---
+### DPU (Data Processing Unit )
+- Specialized processor for data movement tasks.
+- Handles networking, storage, security workload to reduce overhead of CPU for this tasks.
+- Programmable with SDKs like `DOCA`.
 
+### Bluefield
+- Nvidia DPU Family
+- Runs linux and SDK like `DOCA`
+- Used in AI, Edge and HPC infrastructre.
+
+### DPU offloads:
+Move heavy tasks networking/security/storage work from CPU to a dedicated DPU. So CPU can focus on running tasks.
+- Network functins: routing, load balancing, firewall
+- Storage :  NVMe Access, Compression, Replication
+- Security: Encryption, Authentication, Zero-trust enforcement
+- Telemetry: Monitoring, Logging, Traffic analysis
+Improve GPU throughput.
+
+
+Nvidia Eco system & tools
+---
+1. Nvidia NGC: Containers, Models, Helm charts
+2. DOCA SDK and Bluefield DPU usage
+3. Cloud-native GPU orchestration with K8s
+   - Nvidia Container toolkit
+   - Device plugins
+   - GPU Operator
+   - DGCM Exporter
+   - NGC Helm chart
+  
+NVSwitch, NVLink, Cluster Management
+---
+- NVSwitch : High bandwidth GPU fabric, Connect multiple NVLink, Upto 8 GPUS Connect, Multiple GPU scaling
+- NVLink : High Speed GPU-to-GPU communication, 900GB/s
+- Cluster management : Up to 8 GPUS its GPU Cluster.
+<img width="841" height="449" alt="Screenshot from 2026-02-04 17-24-54" src="https://github.com/user-attachments/assets/385c64f6-45c2-42e2-8a98-247d8ba166cd" />
+
+Troubleshooting:
+---
+- nvidia-smi
+- DCGM
+- Nvidia Nsight Systems : Visualize CPU,GPU intercation timelines.
+- Nvidia Nsight Compute : Kernel level GPU profiling metrics.
+
+
+   
 ## Below are some best inference runtimes:
 
 If you want **raw speed** → **TensorRT-LLM**. <br>
