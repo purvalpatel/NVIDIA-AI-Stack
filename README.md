@@ -87,9 +87,9 @@ DCGM
 Infrastructure Stack - Storage, Networking and Virtualization
 ------
 ### GPU Accelarated Storage - Direct data path
-- Generally CPU process and align tasks and provides to GPU. and GPU loads into memory. but for the large datasets its not enough. `CPU -> Memory - GPU`
-- For large datasets - latency will be high.
-- GPU Accelarated storage bypassthe CPU and loads into GPU memory directly. PCIs and NVLink
+- Generally CPU process and align tasks and provides to GPU. and GPU loads into memory. but for the large datasets its not enough. `CPU -> Memory - GPU` <br>
+- For large datasets - latency will be high. <br>
+- GPU Accelarated storage bypassthe CPU and loads into GPU memory directly. PCIs and NVLink <br>
 
 - **GPUDirectStorage** (GDS)
 - NVMe Over Fabrics
