@@ -302,29 +302,29 @@ Some Common used Terms in Nvidia AI Stack
 | DPU | Data Processing unit |
 | NVLink | Connects GPU-to-GPU communication | 
 | CUDA | Python library to use GPUs |
-| cUDANN | |
+| cUDANN | CUDA Deep Neural Network library |
 | TensorRT | optimized inference engine |
-| NCCL | |
-| RAPIDS |  | 
+| NCCL | a specialized software library that enables high-speed, low-latency data transfer and communication between multiple NVIDIA GPUs and nodes |
+| RAPIDS | an open-source suite of GPU-accelerated libraries and APIs designed to speed up end-to-end data science, analytics, and machine learning pipelines | 
 | PyTorch | AI Framework | 
-| TensortFlow |  | 
-| JAX | |
+| TensortFlow | an open-source machine learning framework that is heavily optimized to run on NVIDIA GPUs | 
+| JAX | a high-performance numerical computing and machine learning library that leverages NVIDIA GPUs for massive acceleration |
 | ONNX | Multi framework Model file |
 | Triton | Inference server | 
 | NGC | Nvidia container registry | 
-| DeepStream |  | 
+| DeepStream | real-time video, audio, and image analytics | 
 | SMs | Building block of GPU where threads are running | 
-| TensorCores |  | 
+| TensorCores | hardware unit for matrix multiplication  | 
 | MIG | Hardware level partitioning |  
 | vGPUs | Virtual GPU. Software level paritioning | 
 |  DGCM | Monitoring tool by nvidia | 
 | Slurm | High compute | 
 | GPUDirectStorage | transfer data directly to GPU memory | 
-| DALI |  | 
-| NVMe |  | 
+| DALI | Data Offloading library to overcome CPU bottlenecks | 
+| NVMe | High speed storage protocols that  connects SSDs to CPUS directly with PCIs | 
 | InfiniBand | GPU to GPU communication channel | 
 | RDMA | Remote direct memory Access, used in GPUDirectStorage | 
 | BlueField | Nvidia DPU family | 
-| DOCA |  | 
-| Nvidia Nsignt Systems |  | 
-| Nvidia Nsight Compute |  | 
+| DOCA | Library for DPUs | 
+| Nvidia Nsignt compute | Kernel level GPU profiling metrics | 
+| Nvidia Nsight systems | Visualize CPU-GPU interaactions | 
