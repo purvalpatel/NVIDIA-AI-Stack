@@ -298,33 +298,33 @@ hf download distilbert/distilbert-base-uncased
 Some Common used Terms in Nvidia AI Stack
 | Key | Value | 
 | -- | -- |
-| GPU | |
-| DPU |  |
-| NVLink | | 
-| CUDA | |
+| GPU | GPU Processing Unit |
+| DPU | Data Processing unit |
+| NVLink | Connects GPU-to-GPU communication | 
+| CUDA | Python library to use GPUs |
 | cUDANN | |
-| TensorRT | |
+| TensorRT | optimized inference engine |
 | NCCL | |
 | RAPIDS |  | 
-| PyTorch |  | 
+| PyTorch | AI Framework | 
 | TensortFlow |  | 
 | JAX | |
-| ONNX | |
-| Triton | | 
-| NGC |  | 
+| ONNX | Multi framework Model file |
+| Triton | Inference server | 
+| NGC | Nvidia container registry | 
 | DeepStream |  | 
-| SMs |  | 
+| SMs | Building block of GPU where threads are running | 
 | TensorCores |  | 
-| MIG |  |  
-| vGPUs |  | 
-|  DGCM |  | 
-| Slurm |  | 
-| GPUDirectStorage |  | 
+| MIG | Hardware level partitioning |  
+| vGPUs | Virtual GPU. Software level paritioning | 
+|  DGCM | Monitoring tool by nvidia | 
+| Slurm | High compute | 
+| GPUDirectStorage | transfer data directly to GPU memory | 
 | DALI |  | 
 | NVMe |  | 
-| InfiniBand |  | 
-| RDMA |  | 
-| BlueField |  | 
+| InfiniBand | GPU to GPU communication channel | 
+| RDMA | Remote direct memory Access, used in GPUDirectStorage | 
+| BlueField | Nvidia DPU family | 
 | DOCA |  | 
 | Nvidia Nsignt Systems |  | 
 | Nvidia Nsight Compute |  | 
