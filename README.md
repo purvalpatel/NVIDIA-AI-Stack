@@ -1,4 +1,4 @@
-
+<img width="841" height="449" alt="Screenshot from 2026-02-04 17-24-54" src="https://github.com/user-attachments/assets/63e3f69b-f9ba-4e7a-8ad4-61e406ed1d13" />
 Nvidia AI Stack overview
 -----
 - Harware : GPUs, CPUs, DPUs, NVLink, NVSwitch
@@ -295,3 +295,36 @@ Download model from hf:
 hf download distilbert/distilbert-base-uncased
 ```
 
+Some Common used Terms in Nvidia AI Stack
+| Key | Value | 
+| -- | -- |
+| GPU | |
+| DPU |  |
+| NVLink | | 
+| CUDA | |
+| cUDANN | |
+| TensorRT | |
+| NCCL | |
+| RAPIDS |  | 
+| PyTorch |  | 
+| TensortFlow |  | 
+| JAX | |
+| ONNX | |
+| Triton | | 
+| NGC |  | 
+| DeepStream |  | 
+| SMs |  | 
+| TensorCores |  | 
+| MIG |  |  
+| vGPUs |  | 
+|  DGCM |  | 
+| Slurm |  | 
+| GPUDirectStorage |  | 
+| DALI |  | 
+| NVMe |  | 
+| InfiniBand |  | 
+| RDMA |  | 
+| BlueField |  | 
+| DOCA |  | 
+| Nvidia Nsignt Systems |  | 
+| Nvidia Nsight Compute |  | 
