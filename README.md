@@ -33,35 +33,35 @@ Nvidia GPU Cloud (NGC):
 
 Nvidia GPU Hardware and software architecture:
 ---
-- SMs - Core building blocks of GPU
-        - Handle thread execution and compute operation
-        - A100 GPU - has 108 SMs, H100 Has 132 SMs.
-        - Each SMs Runs threads and parallalism
+- SMs - Core building blocks of GPU <br>
+        - Handle thread execution and compute operation <br>
+        - A100 GPU - has 108 SMs, H100 Has 132 SMs. <br>
+        - Each SMs Runs threads and parallalism <br>
 
-- TensorCores - Built for deep learning
-        - Accelarate F16, BF16, INT8, TF32, FP8
-        - Used in training + Inference
-        - Specialized cores for matrix
+- TensorCores - Built for deep learning <br>
+        - Accelarate F16, BF16, INT8, TF32, FP8 <br>
+        - Used in training + Inference <br>
+        - Specialized cores for matrix <br>
 
-  SMs + Tensor Cores Accelarate AI
-- NVLink - High Speed GPU into connect faster than PCIs.
-        - Used in DGX and Suprtcomputer
-        - Supports multi-model and multi-GPU.
+  SMs + Tensor Cores Accelarate AI <br>
+- NVLink - High Speed GPU into connect faster than PCIs. <br>
+        - Used in DGX and Suprtcomputer <br>
+        - Supports multi-model and multi-GPU. <br>
 
 
 - Powerful datacenter GPUS - A100, H100, L40s, B200
 
-- A100 : General purpose AI Powerhouse
-        - In Most of the provides this is the default choice,
-- H100 : Extreeme performance
-        - Hopper architecture
-        - FP8 Supports
-        - LLM Training, GPU Workloads.
-- L40S : Idle for enterprise inference + Graphics
-        - Ada Lovelance Architecture
-        - AI + Graphics + Video
-- B200 : Designed for future scale Gen AI.
-        - Blackwell architecture
+- A100 : General purpose AI Powerhouse <br>
+        - In Most of the provides this is the default choice, <br>
+- H100 : Extreeme performance <br>
+        - Hopper architecture <br>
+        - FP8 Supports <br>
+        - LLM Training, GPU Workloads. <br>
+- L40S : Idle for enterprise inference + Graphics <br>
+        - Ada Lovelance Architecture <br>
+        - AI + Graphics + Video <br>
+- B200 : Designed for future scale Gen AI. <br>
+        - Blackwell architecture <br>
 
 MIG 
 --
@@ -155,12 +155,12 @@ Nvidia Eco system & tools
 ---
 1. Nvidia NGC: Containers, Models, Helm charts
 2. DOCA SDK and Bluefield DPU usage
-3. Cloud-native GPU orchestration with K8s
-   - Nvidia Container toolkit
-   - Device plugins
-   - GPU Operator
-   - DGCM Exporter
-   - NGC Helm chart
+3. Cloud-native GPU orchestration with K8s <br>
+   - Nvidia Container toolkit <br>
+   - Device plugins <br>
+   - GPU Operator <br>
+   - DGCM Exporter <br>
+   - NGC Helm chart <br>
   
 NVSwitch, NVLink, Cluster Management
 ---
