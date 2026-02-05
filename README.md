@@ -296,6 +296,7 @@ hf download distilbert/distilbert-base-uncased
 ```
 
 Some Common used Terms in Nvidia AI Stack
+---------------------
 | Key | Value | 
 | -- | -- |
 | GPU | GPU Processing Unit |
