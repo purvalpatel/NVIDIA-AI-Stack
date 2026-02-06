@@ -359,27 +359,27 @@ ingest -> Decode -> AI Inference -> postprocess -> Output
 - Build on CUDA library
 
 ## Nvidia Omniverse
-- Nvidias Robotics Simulation platform
+- Nvidia's Robotics Simulation platform
 
 Infra SDK's
 --------
-1. NVIDIA Metropolish
+1. **NVIDIA Metropolish**
 - For smart cities
 - Components : Deepstream, TAO Toolkit, Triton, RAPIDS
 
-2. NVIDIA RIVA
+2. **NVIDIA RIVA**
 - For Speech recognisation
 - Text to speech
 
 
-3. NVIDIA Meno for NLP
+3. **NVIDIA Meno for NLP**
 - FRamework for training and deploying custom LLMs.
 
-4. NVIDIA clara
+4.** NVIDIA clara**
 - For Healthcare AI
 
 
-5. NVIDIA Merlin
+5. **NVIDIA Merlin**
 - Recommendation system
 
 
