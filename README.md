@@ -329,3 +329,70 @@ Some Common used Terms in Nvidia AI Stack
 | DOCA | Library for DPUs | 
 | Nvidia Nsignt compute | Kernel level GPU profiling metrics | 
 | Nvidia Nsight systems | Visualize CPU-GPU interaactions | 
+
+
+
+GPU instances on AWS/Zure:
+---
+A100, H100: <br>
+- A100- Ampere architecture
+- H100 - Hopper architecture
+- Datacenter class, large scale AI training, HPC workloads.
+
+L4: Lightweight, Low-power, used in inferencing <br>
+
+Jetson - Robots, Drone, IoT based devices <br>
+
+AWS: <br>
+- p4d/p5 : A100/H100
+- g5 : L4
+
+Auzre: <br>
+- Nc-series - General purpose
+- Nd-series - V100, A100
+- Nv-series - Graphic based, not for AI
+
+
+### DGX Systems:
+- AI supercomputers
+- Pre-optimized for tensorFlow, RAPIDS
+
+## Nvidia TAO
+- Train, Adapt, Optimize framework
+
+- Is a framework for customizing vision foundation models for high accuracy and fine-tuning microservices
+
+### Workflow of TAO
+- Pick model from NGC
+- Prepare your dataset
+- Configure training Spec ( hyperparametersm Augmentation )
+- Fine-tune model on your dataset
+- optimize (pruning, quantization )
+
+## Deepstream:
+- GPU accelrated streaming analytics tooolkit for NVIDIA
+- Optimized for realtime video and sensor data
+- Camera, Traffic monitoring, theft detection, license, numberplat scaning
+
+Device: Jetson Edge device <br>
+
+```
+ingest -> Decode -> AI Inference -> postprocess -> Output
+```
+- Connects to RAPIDS in readltime analysis
+
+
+### Realtime Pipeline:
+- Input : camera, videfile
+- Decode & Preprocess
+- Inference : Run optimized AI model (TensorRT)
+- Post-process : Draw boxes, count objects, filter events
+- Output: dashboard, databases, alerts
+
+
+### RAPIDS
+- Build on CUDA library
+
+## Nvidia Omniverse
+- Nvidias Robotics Simulation platform
+
