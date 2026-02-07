@@ -419,5 +419,5 @@ Some Common used Terms in Nvidia AI Stack
 | Nvidia Nsight systems | Visualize CPU-GPU interaactions | 
 
 
+<img width="1231" height="1635" alt="Untitled Diagram drawio(4)" src="https://github.com/user-attachments/assets/918b8526-c0a5-46ca-bb91-420eeb029261" />
 
-<img width="1231" height="1635" alt="Nvidia Stack drawio" src="https://github.com/user-attachments/assets/1e08fe7c-73c7-4d17-94a0-633ef98801e1" />
