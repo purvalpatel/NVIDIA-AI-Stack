@@ -420,3 +420,4 @@ Some Common used Terms in Nvidia AI Stack
 
 
 
+<img width="1231" height="1635" alt="Nvidia Stack drawio" src="https://github.com/user-attachments/assets/1e08fe7c-73c7-4d17-94a0-633ef98801e1" />
