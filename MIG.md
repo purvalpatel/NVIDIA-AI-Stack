@@ -127,6 +127,10 @@ To fully reset MIG:
 ```
 sudo nvidia-smi mig -i 0 -R
 ```
+Destroy all CI and GI:
+```
+nvidia-smi mig -dci && sudo nvidia-smi mig -dgi
+```
 
 ## NVIDIA MIG-Parted
 
