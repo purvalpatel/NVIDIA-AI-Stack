@@ -28,21 +28,33 @@ Check current MIG mode:
 ```
 nvidia-smi -L
 ```
+### First check it is enabled or not?
+```
+nvidia-smi -i 0
+nvidia-smi -i 0 --query-gpu=pci.bus_id,mig.mode.current --format=csv
+```
+<img width="933" height="706" alt="Screenshot from 2026-03-07 12-31-13" src="https://github.com/user-attachments/assets/9834a5c5-bb25-4c2c-adfe-111e3c3c8e9e" />
 
 If you see “GPU 0: NVIDIA H100 …” with no MIG instances, MIG is not enabled.
 
 ### Enable MIG on the GPU:
 ```
-sudo nvidia-smi mig -cgi 0 -C
+sudo nvidia-smi -i 0 -mig 1
 ```
-`-C` = Enable MIG mode on GPU 0. <br>
 After enabling, the GPU will restart (no processes should be running on it). <br>
 
 ### Verify MIG mode:
 ```
 nvidia-smi
+nvidia-smi -L
 ```
-Now you should see a MIG-enabled GPU, often listed as multiple “GPU Instances.” <br>
+Now you should see a `MIG-enabled` GPU, often listed as multiple “GPU Instances.” <br>
+
+### List all possible MIG instances. 
+```
+nvidia-smi mig -lgip
+```
+<img width="554" height="415" alt="image" src="https://github.com/user-attachments/assets/d4d5876e-1bb6-4ee4-a42a-51b4fda99636" />
 
 ## 4. Create MIG Instances
 You can create multiple GPU instances (GI) with different sizes. Each instance has a compute instance (CI). <br>
@@ -65,6 +77,7 @@ This will show profile IDs like 1g.5gb, 2g.10gb, etc. You choose based on your w
 ## 5. Verify MIG Instances
 ```
 nvidia-smi
+nvidia-smi -L
 ```
 
 You should now see a list of GPU Instances, each with its memory, cores, and utilization. <br>
