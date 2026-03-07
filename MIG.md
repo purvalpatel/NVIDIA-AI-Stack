@@ -53,6 +53,8 @@ Now you should see a `MIG-enabled` GPU, often listed as multiple “GPU Instance
 ### List all possible MIG instances. 
 ```
 nvidia-smi mig -lgip
+## for specific GPU - 0
+nvidia-smi mig -lgip -i 0
 ```
 <img width="554" height="415" alt="image" src="https://github.com/user-attachments/assets/d4d5876e-1bb6-4ee4-a42a-51b4fda99636" />
 
@@ -62,6 +64,8 @@ You can create multiple GPU instances (GI) with different sizes. Each instance h
 ### Example: create 3 instances of H100 with size 1g.10gb:
 ```
 sudo nvidia-smi mig -i 0 -cgi 19,19,19 -C
+OR
+nvidia-smi mig -cgi 9 -i 0 -C
 ```
 `-i 0` → GPU 0 <br>
 `-cgi` → Compute GPU Instance profile ID <br>
