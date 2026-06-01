@@ -1,36 +1,70 @@
 
-NeMo ( For Developers ) :
-----------------------
+# Nemotron:
+
+Nvidia Nemotrol is NVIDIA's Family of AI models designed for entrprise AI applications. <br>
+A Simple way to think about it:
+```
+OpenAI -> GPT Models
+Meta -> Llama Models
+NVIDIA -> Nemotron Models
+```
+
+Nemotron is LLM that can:
+- Answer Questions.
+- Generate Code
+- Summerize documents
+- Power Chatbots
+- Assist with reasoning tasks.
+
+Just like ChatGPT, but built by NVIDIA.
+
+# NeMo 
 
 Provides pre-built containers that already have all the AI developement tools you need – GPU Optimized.  <br>
 
-NeMo Provides tools for 3 main things:  <br>
-1. Training models  <br>
-2. Customizing models  <br>
-3. Deploying models  <br>
+NeMo is Framework/platform used to:
+1. Training models
+2. Customizing models
+3. Fine-tinme LLMs
+4. Create AI Agents
+5. Evaulate Models
 
- 
-Three main building blocks of NeMo:  <br>
-1. **Nemo Framework**  - For training and customizing models  <br>
-2. **NeMo Guardrails**	- Adds safety and rules to chatbots  ( For Developers )  <br>
-3. **Nemo Inference**	- For deploying optimized models ( For MLOps )  <br>
+Think of it as the toolkit for bulding AI models.
 
- 
+Example:
+```
+Raw Data
+   |
+ NeMo
+   |
+Fine-tuned Model
+```
 
-#### NeMo Framework: <br>
+Think it as like:
+```
+NeMo = Factory
+NeMotrol = product
+```
+
+Three main building blocks of NeMo:
+1. **Nemo Framework**  - For training and customizing models 
+2. **NeMo Guardrails**	- Adds safety and rules to chatbots  ( For Developers ) 
+3. **Nemo Inference**	- For deploying optimized models ( For MLOps ) 
+
+#### NeMo Framework:
 Its an open-source framework to train, fine-tune and deploy large AI Models – like chatbots, speech.  <br>
 Toolkit to build and customize LLM and generative models efficiently.  <br>
 
 **Why NeMo?**  <br>
 Before NeMo, Developers had to manually handle:  <br>
-Distributed training  <br>
-GPU Parallesim  <br>
-Data preprocessing  <br>
-Checkpoint management  <br>
-Optimization for mixed precission(FP16,FP8)  <br>
-NeMo Automates all that for NVIDIA hardware.  <br>
+- Distributed training
+- GPU Parallesim
+- Data preprocessing
+- Checkpoint management
+- Optimization for mixed precission(FP16,FP8) 
+- NeMo Automates all that for NVIDIA hardware.
 
-https://github.com/NVIDIA-NeMo/NeMo 
+[Nemo](https://github.com/NVIDIA-NeMo/NeMo)
 
 #### Example in real-life:  <br>
 
