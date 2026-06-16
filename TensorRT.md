@@ -145,7 +145,7 @@ docker run -it --rm \
   --runtime=nvidia \
   --gpus all \
   --shm-size=16G \
-  -v /home/nuvo_admin:/workspace \
+  -v /home/linux_admin:/workspace \
   nvcr.io/nvidia/tensorrt-llm/release:1.2.0rc2
 ```
 Then inside the container:

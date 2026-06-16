@@ -212,7 +212,7 @@ First, we'll convert the Hugging Face safetensors model to a TensorRT-LLM checkp
 
 We'll use the TensorRT-LLM tools inside the NIM container to perform the conversion.<br><br>
 
-TRTLLM_CKPT_DIR = /home/nuvo_admin/.purval/output_model <br>
+TRTLLM_CKPT_DIR = /home/linux_admin/.purval/output_model <br>
 
 ```
 print("Starting conversion to TensorRT-LLM checkpoint...")
@@ -222,7 +222,7 @@ print("This process may take a few minutes depending on your hardware.")
   --runtime=nvidia \
   --gpus '"device=0,1"' \
   --shm-size=16GB \
-  -v /home/nuvo_admin/.purval/ephemeral/models/llama3-8b-instruct-hf:/input_model -v /home/nuvo_admin/.purval/output_model:/output_model \
+  -v /home/linux_admin/.purval/ephemeral/models/llama3-8b-instruct-hf:/input_model -v /home/linux_admin/.purval/output_model:/output_model \
   $NIM_IMAGE \
   python3 app/tensorrt_llm/examples/models/core/llama/convert_checkpoint.py \
   --model_dir /input_model \
@@ -273,11 +273,11 @@ Total time of converting checkpoints: 00:00:19
 ```
 #### Copy the required files from the huggingface model directory to the TensorRT-LLM checkpoint directory
 ```
-!cp /home/nuvo_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/config.json /home/nuvo_admin/.purval/output_model/trtllm_ckpt/
-!cp /home/nuvo_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/generation_config.json /home/nuvo_admin/.purval/output_model/trtllm_ckpt/
-!cp /home/nuvo_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/tokenizer.json /home/nuvo_admin/.purval/output_model/trtllm_ckpt/
-!cp /home/nuvo_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/tokenizer_config.json /home/nuvo_admin/.purval/output_model/trtllm_ckpt/
-!cp /home/nuvo_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/special_tokens_map.json /home/nuvo_admin/.purval/output_model/trtllm_ckpt/
+!cp /home/linux_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/config.json /home/linux_admin/.purval/output_model/trtllm_ckpt/
+!cp /home/linux_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/generation_config.json /home/linux_admin/.purval/output_model/trtllm_ckpt/
+!cp /home/linux_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/tokenizer.json /home/linux_admin/.purval/output_model/trtllm_ckpt/
+!cp /home/linux_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/tokenizer_config.json /home/linux_admin/.purval/output_model/trtllm_ckpt/
+!cp /home/linux_admin/.purval/ephemeral/models/llama3-8b-instruct-hf/special_tokens_map.json /home/linux_admin/.purval/output_model/trtllm_ckpt/
 ```
 
 #### Now compile tensorRT-LLM engine:
@@ -290,7 +290,7 @@ print("This process may take several minutes depending on your hardware and opti
   --runtime=nvidia \
   --gpus all \
   --shm-size=32GB \
-  -v /home/nuvo_admin/.purval/output_model/trtllm_ckpt:/input_checkpoint -v /home/nuvo_admin/.purval/output_model/trtllm_ckpt/trtllm_engine:/output_engines \
+  -v /home/linux_admin/.purval/output_model/trtllm_ckpt:/input_checkpoint -v /home/linux_admin/.purval/output_model/trtllm_ckpt/trtllm_engine:/output_engines \
   -w /output_engines \
   -u $(id -u) \
   $NIM_IMAGE \
@@ -318,7 +318,7 @@ print("Deploying optimized TensorRT-LLM engine with NIM...")
   -e NIM_MODEL_NAME="/opt/models/my_model" \
   -e NIM_SERVED_MODEL_NAME="meta-llama/Meta-Llama-3-8B-Instruct" \
   -e NIM_MODEL_PROFILE="tensorrt_llm" \
-  -v /home/nuvo_admin/.purval/output_model/trtllm_ckpt/trtllm_engine:/opt/models/trtllm -v $LOCAL_NIM_CACHE:/opt/nim/.cache \
+  -v /home/linux_admin/.purval/output_model/trtllm_ckpt/trtllm_engine:/opt/models/trtllm -v $LOCAL_NIM_CACHE:/opt/nim/.cache \
   -u $(id -u) \
   -p 8000:8000 \
   -d \

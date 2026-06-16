@@ -66,7 +66,7 @@ pip install vllm
 
 3. Serve it with vLLM.
 ```BASH
-vllm serve /home/nuvo_admin/.cache/huggingface/hub/models--TinyLlama--TinyLlama-1.1B-Chat-v1.0/snapshots/fe8a4ea1ffedaf415f4da2f062534de366a451e6 --host 0.0.0.0 --port 8000
+vllm serve /home/linux_admin/.cache/huggingface/hub/models--TinyLlama--TinyLlama-1.1B-Chat-v1.0/snapshots/fe8a4ea1ffedaf415f4da2f062534de366a451e6 --host 0.0.0.0 --port 8000
 ```
 
 4. Test model
