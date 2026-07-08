@@ -1,3 +1,18 @@
+## Kubernetes and NVIDIA GPUs
+- NVIDIA GPU operator
+- GPU operator on RedHat Openshift
+- NVIDIA NIM operator
+- NVIDIA Network Operator
+- NVIDIA confidential Containers
+- Multi-Instance GPU support in Kubernetes
+- NVIDIA DCGM Exporter
+- NVIDIA Device plugin for kubernetes
+- NVIDIA GPU Feature Discovery
+
+## Containers and NVIDIA GPUs
+- Nvidia Container Toolkit
+- Advanced Configurations
+        - Container Device interface (CDI)
 
 Nvidia AI Stack overview
 -----
@@ -8,7 +23,7 @@ Nvidia AI Stack overview
 - Tools: Triton, NGC, DeepStream, K8s
 
 
-Nvidia Software stack:
+## Nvidia Software stack:
 ---
 | Key | Value |
 | --- | --- |
