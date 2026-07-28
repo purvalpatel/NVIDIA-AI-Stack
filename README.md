@@ -19,59 +19,119 @@
 ### 1. GPU Hardware Layer
 Understand NVIDIA hardware.
 - PCIe vs SXM, Tensor Cores, CUDA Cores, NVLink, NVSwitch, Grace CPU, Grace Hopper, H100, H200, B200, RTX Pro GPU
-GPU memory
-HBM
-Bandwidth
-FP32
-FP16
-BF16
-INT8
-FP8
-## Kubernetes and NVIDIA GPUs
-- NVIDIA GPU operator
-- GPU operator on RedHat Openshift
-- NVIDIA NIM operator
-- NVIDIA Network Operator
-- NVIDIA confidential Containers
-- Multi-Instance GPU support in Kubernetes
-- NVIDIA DCGM Exporter
-- NVIDIA Device plugin for kubernetes
-- NVIDIA GPU Feature Discovery
+- GPU memory, HBM, Bandwidth, FP32, FP16, BF16, INT8, FP8
 
-## Containers and NVIDIA GPUs
-- Nvidia Container Toolkit
-- Advanced Configurations
-        - Container Device interface (CDI)
+### 2. Nvidia Driver stack
+- NVIDIA Driver
+- NVML
+- CUDA Driver API
+- CUDA Runtime
+- libcuda.so
+- nvidia-smi
+- persistence mode
 
-Nvidia AI Stack overview
------
-- Harware : GPUs, CPUs, DPUs, NVLink, NVSwitch
-- Software : CUDA, cuDNN, Drivers
-- LKibraries/SDK : TensorRT, NCCL, RAPIDS
-- AI Frameworks: PyTorch, TensorFlow, JAX
-- Tools: Triton, NGC, DeepStream, K8s
+### 3. CUDA toolkit
+- CUDA Toolkit
+- CUDA Runtime
+- CUDA Libraries
+- CUDA Compiler (nvcc)
+
+### 4. Container Eco system
+- NVIDIA Container Toolkit
+        - Advanced configuration: Container Device interface (CDI)
+- NVIDIA Container Runtime
+- CDI
+- OCI Hooks
+- Docker Runtime
+- containerd runtime
+
+### 5. Kubernetes and NVIDIA GPUs
+- GPU Operator
+- Device Plugin
+- GPU Feature Discovery
+- Node Feature Discovery
+- MIG Manager
+- DCGM Exporter
+- GPU sharing
+- Time slicing
+- MIG
+- HAMi
+
+### 6. GPU Virtualization
+- MIG
+- Time Slicing
+- MPS
+- vGPU
+- SR-IOV (where supported)
+- GPU partitioning
+
+### 8. Model Serving
+- vLLM
+- TensorRT-LLM
+- Triton Inference Server
+- Ollama
+- llama.cpp
+- KServe
+- SGLang
+Know,
+- KV Cache
+- Tensor Parallelism
+- Pipeline Parallelism
+- Continuous batching
+
+### 9. Nvidia AI Enterprise
+- AI Enterprise
+- NIM
+- NeMo
+- RAPIDS
+- Morpheus
+- BioNeMo
+
+### 12. Monitoring
+- DCGM
+- DCGM Exporter
+- Prometheus
+- Grafana
+- Nsight Systems
+- Nsight Compute
+
+### 15. Networking
+- NVLink
+- NVSwitch
+- InfiniBand
+- RoCE
+- GPUDirect RDMA
+- GPUDirect Storage
+
+### 16. Storage
+- GPUDirect Storage
+- Lustre
+- BeeGFS
+- NFS
+- NVMe
+- Parallel file systems
+
+### 18. Performance profiling
+- Nsight Systems
+- Nsight Compute
+- nvprof (legacy)
+- CUPTI
+
+### 19. Cluster management
+- Slurm
+- Kubernetes
+- Volcano
+- Kueue
+- Ray
+- Kubeflow
+
 
 - PCIs : Socker which connects GPU with the Hardware
 - SXM : Socket which is specially designed for super computers to connects the GPU with motherboard.
 
-## Nvidia Software stack:
----
-| Key | Value |
-| --- | --- |
-| CUDA | Software library interact with GPU directly |
-| cuDNN | CUDA Deep Neural Network library |
-| TensorRT | Inference |
 
-- All are tightly integrated with AI
-- Powers training and Inference
+#### Nvidia GPU Cloud (NGC):
 
-- CNN : Convolutional Neural Network <br> Detect Patterns. Object detection in security cameras.
-- Tritorn - Supports multi-framework model deploymenbt
-
-
-
-Nvidia GPU Cloud (NGC):
---------------
 - Registry for GPU containers
 - Optimized
 - Pre-trained containers
@@ -109,20 +169,17 @@ Nvidia GPU Hardware and software architecture:
 - `B200` : Designed for future scale Gen AI. <br>
         - Blackwell architecture <br>
 
-MIG 
---
+#### MIG 
 - Multi instance GPU
 - Hardware level partitioning
 
-vGPU
---
+#### vGPU
 - Software level partitioning
 - Hypervisor based
 - One physical GPU can be converted into multiple vGPUs and that vGPU can be assigned to VM, User, Containers.
 
 
-DCGM
----
+#### DCGM
 - Monitoring tool
 - Detects bottlenecks early
 - Prometheus + Grafana
@@ -130,8 +187,8 @@ DCGM
 
 **Slurm** - Mostly used in GPU job scheduling
 
-Infrastructure Stack - Storage, Networking and Virtualization
-------
+#### Infrastructure Stack - Storage, Networking and Virtualization
+
 ### GPU Accelarated Storage - Direct data path
 - Generally CPU process and align tasks and provides to GPU. and GPU loads into memory. but for the large datasets its not enough. `CPU -> Memory - GPU` <br>
 - For large datasets - latency will be high. <br>
