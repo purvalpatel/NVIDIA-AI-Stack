@@ -16,6 +16,17 @@
 15. Performance Profiling
 16. Cluster Management
 
+### 1. GPU Hardware Layer
+Understand NVIDIA hardware.
+- PCIe vs SXM, Tensor Cores, CUDA Cores, NVLink, NVSwitch, Grace CPU, Grace Hopper, H100, H200, B200, RTX Pro GPU
+GPU memory
+HBM
+Bandwidth
+FP32
+FP16
+BF16
+INT8
+FP8
 ## Kubernetes and NVIDIA GPUs
 - NVIDIA GPU operator
 - GPU operator on RedHat Openshift
