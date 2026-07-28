@@ -137,8 +137,8 @@ Know,
 - Pre-trained containers
 - Secured production ready assets
 
-Nvidia GPU Hardware and software architecture:
----
+#### Nvidia GPU Hardware and software architecture:
+
 - **SMs** - Core building blocks of GPU <br>
         - Handle thread execution and compute operation <br>
         - A100 GPU - has 108 SMs, H100 Has 132 SMs. <br>
@@ -212,8 +212,8 @@ Infiband:
 - RDMA - Zero-Copy Memory access
 - Supercomputers
 
-## RDMA and Direct Storage
-### RDMA:
+### RDMA and Direct Storage
+#### RDMA:
 - Data directly trasnfer to GPU memory
 - Without CPU passing
 - Reduce Latency
@@ -225,16 +225,16 @@ Infiband:
 - This is possible with `CUDA`, `cFile`, `DALI`
 - Supported A100, H100 and blueField
 
-Why RDMA and Direct Storage Matter ?
--------------------
+#### Why RDMA and Direct Storage Matter ?
+
 - Speed up training and inference
 - Involves GPU utilization
 - Reduce GPU load and cost
 - Supports large batch streaming and multi-node clusters.
 - Enable Realtime Data ingetion
 
-DPU and Bluefield
----
+#### DPU and Bluefield
+
 ### DPU (Data Processing Unit )
 - Specialized processor for data movement tasks.
 - Handles networking, storage, security workload to reduce overhead of CPU for this tasks.
@@ -254,8 +254,8 @@ Move heavy tasks networking/security/storage work from CPU to a dedicated DPU. S
 Improve GPU throughput.
 
 
-Nvidia Eco system & tools
----
+#### Nvidia Eco system & tools
+
 1. **Nvidia NGC**: Containers, Models, Helm charts
 2. **DOCA** SDK and Bluefield DPU usage
 3. **Cloud-native** GPU orchestration with K8s <br>
@@ -265,15 +265,14 @@ Nvidia Eco system & tools
    - DGCM Exporter <br>
    - NGC Helm chart <br>
   
-NVSwitch, NVLink, Cluster Management
----
+#### NVSwitch, NVLink, Cluster Management
 - **NVSwitch** : High bandwidth GPU fabric, Connect multiple NVLink, Upto 8 GPUS Connect, Multiple GPU scaling
 - **NVLink** : High Speed GPU-to-GPU communication, 900GB/s
 - **Cluster management** : Up to 8 GPUS its GPU Cluster.
 <img width="841" height="449" alt="Screenshot from 2026-02-04 17-24-54" src="https://github.com/user-attachments/assets/385c64f6-45c2-42e2-8a98-247d8ba166cd" />
 
-Troubleshooting:
----
+
+#### Troubleshooting:
 - **nvidia-smi**
 - **DCGM**
 - **Nvidia Nsight Systems** : Visualize CPU,GPU intercation timelines.
