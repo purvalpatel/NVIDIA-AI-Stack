@@ -1,3 +1,21 @@
+## Roadmap for Infrastructure to AI
+1. GPU Hardware layer
+2. NVIDIA Driver Stack
+3. CUDA Eco-System
+4. Kubernetes Eco-system
+5. AI Frameworks
+6. Model Serving
+7. NVIDIA AI Enterprise
+8. NVIDIA NIM
+9. NeMo
+10. TensorRT
+11. NCCL
+12. Monitoring
+13. Storage
+14. Security
+15. Performance Profiling
+16. Cluster Management
+
 ## Kubernetes and NVIDIA GPUs
 - NVIDIA GPU operator
 - GPU operator on RedHat Openshift
@@ -22,6 +40,8 @@ Nvidia AI Stack overview
 - AI Frameworks: PyTorch, TensorFlow, JAX
 - Tools: Triton, NGC, DeepStream, K8s
 
+- PCIs : Socker which connects GPU with the Hardware
+- SXM : Socket which is specially designed for super computers to connects the GPU with motherboard.
 
 ## Nvidia Software stack:
 ---
