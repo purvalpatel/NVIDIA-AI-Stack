@@ -6,7 +6,7 @@
 5. AI Frameworks
 6. Model Serving
 7. NVIDIA AI Enterprise
-8. NVIDIA NIM
+8. [NVIDIA NIM](Nvidia-NIM.md)
 9. NeMo
 10. TensorRT
 11. NCCL
@@ -55,7 +55,7 @@ Understand NVIDIA hardware.
 - GPU sharing
 - Time slicing
 - MIG
-- HAMi
+- [HAMi](HAMi.md)
 
 ### 6. GPU Virtualization
 - MIG
@@ -66,8 +66,8 @@ Understand NVIDIA hardware.
 - GPU partitioning
 
 ### 8. Model Serving
-- vLLM
-- TensorRT-LLM
+- [vLLM](vLLM.md)
+- [TensorRT-LLM](tensortRT_LLM.md)
 - Triton Inference Server
 - Ollama
 - llama.cpp
