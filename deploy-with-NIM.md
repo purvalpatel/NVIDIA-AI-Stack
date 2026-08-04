@@ -1,5 +1,6 @@
-Deploy Huggingface Safetensor LLM Weight with NIM:
--------------------------------------------
+NIM is prebuild contaiers with all the dependencies and GPU optimization.
+
+## Deploy Huggingface Safetensor LLM Weight with NIM:
 
 Quick summary:
 
@@ -91,7 +92,6 @@ docker run -it --rm \
  -d \
  $NIM_IMAGE
 ```
-
 
 
 ## Deployment Example 3:
