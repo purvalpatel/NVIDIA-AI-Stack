@@ -126,7 +126,7 @@ services:
       - "nvidia.com/gpu=0"                          ## GPU added here
     environment:
       - USER=purval
-      - PASSWORD=I@m1337
+      - PASSWORD=12345
       - GID=1000
       - UID=1000
       - DOCKER_ALLOW_IPV6_ON_IPV4_INTERFACE=1
@@ -184,7 +184,6 @@ networks:
   docker_default:
     external: true
     name: docker_default
-
 ```
 
 
