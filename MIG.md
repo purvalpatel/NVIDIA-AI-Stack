@@ -197,10 +197,13 @@ Note: UUID will change sometimes even after reboot. MIG-parted will make sure to
 for example, `docker run --rm-it \   --device=nvidia.com/gpu=0:4 \   ubuntu:22.04 bash`
 
 <br>
+
+
 You will get this cdi list using
-```
+```BASH
 nvidia-ctk cdi list
 ```
+
 <img width="573" height="865" alt="image" src="https://github.com/user-attachments/assets/291d04ea-20bb-40e3-b214-5682d1fc4944" />
 
 ### Disable MIG of specific GPU.
