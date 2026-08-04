@@ -137,11 +137,8 @@ nvidia-smi mig -dci && sudo nvidia-smi mig -dgi
 When we create GPU partitions and reboot the server, the partitions GPU will be automatically removed and when we create it the UUID will be changed. <br>
 To overcome this issue. We have to use nvidia-mig-parted tool. <br>
 
-Link -  <br>
-
-Install nvidia-mig-parted: <br>
-https://github.com/NVIDIA/mig-parted/releases
-Download deb file and install it. <br>
+### Install MIG-PARTED
+Install [nvidia-mig-parted](https://github.com/NVIDIA/mig-parted/releases) Download deb file and install it. <br>
 
 Clone the mig-parted git repository:
 ```
@@ -149,9 +146,9 @@ cd /home/script
 git clone https://github.com/purvalpatel/mig-parted.git
 ```
 
-Now create/edit config YAML file for the configuration inside /home/script/mig-parted/examples/config.yaml
+Now create/edit config YAML file for the configuration inside `/path/to/mig-parted/mig-parted/examples/config.yaml`
 
-Location on live server: /home/script/mig-parted/
+Location on live server: /path/to/mig-parted/
 # config.yaml
 ```
 version: v1
@@ -191,7 +188,13 @@ After reboot apply below command.
 ```
 nvidia-mig-parted apply -f config.yaml
 ```
-The same partitions will be created after that with the same UUID.
+The same partitions will be created.
+
+Note: UUID will change sometimes even after reboot. MIG-parted will make sure to recreate all the MIG Partition after reboot. but not give suriety of UUID stay intact. instead of Using UUID in program you can use CDI id of the GPU device. <br>
+<br>
+for example, `docker run --rm-it \   --device=nvidia.com/gpu=0:4 \   ubuntu:22.04 bash`
+
+<br>
 
 ### Disable MIG of specific GPU.
 Remove all MIG instances from GPU 1:
