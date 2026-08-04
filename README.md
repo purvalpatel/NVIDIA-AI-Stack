@@ -1,27 +1,27 @@
 ## Roadmap for Infrastructure to AI
-1. [Nvidia GPU Hardware architecture](#nvidia-gpu-hardware-architecture)
-2. NVIDIA Driver Stack
-3. CUDA Eco-System
-4. Kubernetes Eco-system
+1. [GPU Hardware Layer](#gpu-hardware-layer)
+2. [NVIDIA Driver Stack](#Nvidia-driver-stack)
+3. [CUDA toolkit](#cuda-toolkit)
+4. [Kubernetes Eco-system](kubernetes-eco-system)
 5. AI Frameworks
-6. Model Serving
-7. NVIDIA AI Enterprise
+6. [Model Serving](#model-serving)
+7. [Nvidia AI Enterprise](#nvidia-ai-enterprise)
 8. [NVIDIA NIM](Nvidia-NIM.md)
-9. NeMo
+9. [NeMo](NeMo.md)
 10. TensorRT
 11. NCCL
-12. Monitoring
-13. Storage
+12. [Monitoring](#monitoring)
+13. [Storage](#storage)
 14. Security
-15. Performance Profiling
-16. Cluster Management
+15. [Performance Profiling](#performance-profiling)
+16. [Cluster management](#cluster-management)
 
-### 1. GPU Hardware Layer
+### GPU Hardware Layer
 Understand NVIDIA hardware.
 - PCIe vs SXM, Tensor Cores, CUDA Cores, NVLink, NVSwitch, Grace CPU, Grace Hopper, H100, H200, B200, RTX Pro GPU
 - GPU memory, HBM, Bandwidth, FP32, FP16, BF16, INT8, FP8
 
-### 2. Nvidia Driver stack
+### Nvidia Driver stack
 - NVIDIA Driver
 - NVML
 - CUDA Driver API
@@ -30,13 +30,14 @@ Understand NVIDIA hardware.
 - nvidia-smi
 - persistence mode
 
-### 3. CUDA toolkit
+### CUDA toolkit
 - CUDA Toolkit
 - CUDA Runtime
 - CUDA Libraries
 - CUDA Compiler (nvcc)
 
-### 4. Container Eco system
+### Kubernetes Eco-system
+Kubernetes and container eco-system
 - NVIDIA Container Toolkit
         - Advanced configuration: Container Device interface (CDI)
 - NVIDIA Container Runtime
@@ -45,7 +46,7 @@ Understand NVIDIA hardware.
 - Docker Runtime
 - containerd runtime
 
-### 5. Kubernetes and NVIDIA GPUs
+### Kubernetes and NVIDIA GPUs
 - GPU Operator
 - Device Plugin
 - GPU Feature Discovery
@@ -57,7 +58,7 @@ Understand NVIDIA hardware.
 - MIG
 - [HAMi](HAMi.md)
 
-### 6. GPU Virtualization
+### GPU Virtualization
 - MIG
 - Time Slicing
 - MPS
@@ -65,7 +66,7 @@ Understand NVIDIA hardware.
 - SR-IOV (where supported)
 - GPU partitioning
 
-### 8. Model Serving
+### Model Serving
 - [vLLM](vLLM.md)
 - [TensorRT-LLM](tensortRT_LLM.md)
 - Triton Inference Server
@@ -79,7 +80,7 @@ Know,
 - Pipeline Parallelism
 - Continuous batching
 
-### 9. Nvidia AI Enterprise
+### Nvidia AI Enterprise
 - AI Enterprise
 - NIM
 - NeMo
@@ -87,7 +88,7 @@ Know,
 - Morpheus
 - BioNeMo
 
-### 12. Monitoring
+### Monitoring
 - DCGM
 - DCGM Exporter
 - Prometheus
@@ -95,7 +96,7 @@ Know,
 - Nsight Systems
 - Nsight Compute
 
-### 15. Networking
+### Networking
 - NVLink
 - NVSwitch
 - InfiniBand
@@ -103,7 +104,7 @@ Know,
 - GPUDirect RDMA
 - GPUDirect Storage
 
-### 16. Storage
+### Storage
 - GPUDirect Storage
 - Lustre
 - BeeGFS
@@ -111,13 +112,13 @@ Know,
 - NVMe
 - Parallel file systems
 
-### 18. Performance profiling
+### Performance profiling
 - Nsight Systems
 - Nsight Compute
 - nvprof (legacy)
 - CUPTI
 
-### 19. Cluster management
+### Cluster management
 - Slurm
 - Kubernetes
 - Volcano
