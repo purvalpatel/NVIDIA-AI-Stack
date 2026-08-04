@@ -1,5 +1,5 @@
 ## Roadmap for Infrastructure to AI
-1. GPU Hardware layer
+1. [Nvidia GPU Hardware architecture](#nvidia-gpu-hardware-architecture)
 2. NVIDIA Driver Stack
 3. CUDA Eco-System
 4. Kubernetes Eco-system
@@ -129,15 +129,17 @@ Know,
 - PCIs : Socker which connects GPU with the Hardware
 - SXM : Socket which is specially designed for super computers to connects the GPU with motherboard.
 
+-----
 
-#### Nvidia GPU Cloud (NGC):
+### Nvidia GPU Cloud (NGC):
 
 - Registry for GPU containers
 - Optimized
 - Pre-trained containers
 - Secured production ready assets
 
-#### Nvidia GPU Hardware and software architecture:
+
+### Nvidia GPU Hardware architecture
 
 - **SMs** - Core building blocks of GPU <br>
         - Handle thread execution and compute operation <br>
