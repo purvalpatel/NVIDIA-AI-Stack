@@ -149,7 +149,8 @@ git clone https://github.com/purvalpatel/mig-parted.git
 Now create/edit config YAML file for the configuration inside `/path/to/mig-parted/mig-parted/examples/config.yaml`
 
 Location on live server: /path/to/mig-parted/
-# config.yaml
+
+#### config.yaml
 ```
 version: v1
 mig-configs:
@@ -195,6 +196,11 @@ Note: UUID will change sometimes even after reboot. MIG-parted will make sure to
 for example, `docker run --rm-it \   --device=nvidia.com/gpu=0:4 \   ubuntu:22.04 bash`
 
 <br>
+You will get this cdi list using
+```
+nvidia-ctk cdi list
+```
+<img width="573" height="865" alt="image" src="https://github.com/user-attachments/assets/291d04ea-20bb-40e3-b214-5682d1fc4944" />
 
 ### Disable MIG of specific GPU.
 Remove all MIG instances from GPU 1:
