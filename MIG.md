@@ -56,6 +56,7 @@ nvidia-smi mig -lgip
 ## for specific GPU - 0
 nvidia-smi mig -lgip -i 0
 ```
+
 <img width="554" height="415" alt="image" src="https://github.com/user-attachments/assets/d4d5876e-1bb6-4ee4-a42a-51b4fda99636" />
 
 ## 4. Create MIG Instances
