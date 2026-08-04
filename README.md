@@ -50,8 +50,8 @@ Kubernetes and container eco-system
 ### Kubernetes and NVIDIA GPUs
 - GPU Operator
 - Device Plugin
-- GPU Feature Discovery
-- Node Feature Discovery
+- [GPU Feature Discovery](#gpu-feature-discovery)
+- [Node Feature Discovery](#node-feature-discovery)
 - [MIG Manager](MIG.md)
 - DCGM Exporter
 - GPU sharing
@@ -178,6 +178,12 @@ Know,
 - Hypervisor based
 - One physical GPU can be converted into multiple vGPUs and that vGPU can be assigned to VM, User, Containers.
 
+### GPU feature discovery
+Kubernetes add-on for detecting GPU features and label it with the node.
+
+### Node feature discovery
+Kubernetes add-on for detecting hardware feature and label it with the node.
+
 
 ### DCGM
 - Monitoring tool
@@ -239,7 +245,6 @@ If you want **local/offline** → **llama.cpp** / **Ollama**. <br>
 Below is the typical architecture in terms of working with Nvidia AI Stack:
 ---------------------------------------------------
 Training (NeMo Framework) -> Optimization (TensorRT) -> serving (Triton/NIM)  <br>
-
 
 ### Big Picture:
 
@@ -331,7 +336,6 @@ TensorRT Engine (.plan)
 
 
 Install Huggingface-cli:
--------------------------
 ```
 apt install python3.10-venv
 python3 -m venv ~/hf-venv
