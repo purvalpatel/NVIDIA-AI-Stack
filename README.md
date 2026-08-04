@@ -20,6 +20,7 @@
 Understand NVIDIA hardware.
 - PCIe vs SXM, Tensor Cores, CUDA Cores, NVLink, NVSwitch, Grace CPU, Grace Hopper, H100, H200, B200, RTX Pro GPU
 - GPU memory, HBM, Bandwidth, FP32, FP16, BF16, INT8, FP8
+- Fore more details [Nvidia GPU Hardware architecture](#nvidia-gpu-hardware-architecture)
 
 ### Nvidia Driver stack
 - NVIDIA Driver
