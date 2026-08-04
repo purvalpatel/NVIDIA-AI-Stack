@@ -42,26 +42,26 @@ Kubernetes and container eco-system
 - NVIDIA Container Toolkit
         - Advanced configuration: Container Device interface (CDI)
 - NVIDIA Container Runtime
-- CDI
+- [Nvidia CDI](Nvidia-CDI.md)
 - OCI Hooks
 - Docker Runtime
-- containerd runtime
+- Containerd runtime
 
 ### Kubernetes and NVIDIA GPUs
 - GPU Operator
 - Device Plugin
 - GPU Feature Discovery
 - Node Feature Discovery
-- MIG Manager
+- [MIG Manager](MIG.md)
 - DCGM Exporter
 - GPU sharing
-- Time slicing
+- [Time slicing](time-slicing.md)
 - [MIG](MIG.md)
 - [HAMi](HAMi.md)
 
 ### GPU Virtualization
 - [MIG](MIG.md)
-- Time Slicing
+- [Time Slicing](time-slicing.md)
 - MPS
 - [vGPU](#vgpu)
 - SR-IOV (where supported)
