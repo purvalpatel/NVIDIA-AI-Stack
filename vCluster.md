@@ -15,4 +15,5 @@ host-cluster
 MiniCube - Creates real kubernetes clusters ( Control Plane + worker node) on single machine.
 
 vCluster - creates virtual kubernetes control plane inside existing kubernetes cluster.
-it does not  create another worker node.
+- it does not  create another worker node.
+- One control plane will be there on host machine. and vluster creates multiple control plane in pods.
