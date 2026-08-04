@@ -91,7 +91,7 @@ Know,
 
 ### Monitoring
 - DCGM
-- DCGM Exporter
+- [DCGM Exporter](DCGM-Exporter.md)
 - Prometheus
 - Grafana
 - Nsight Systems
