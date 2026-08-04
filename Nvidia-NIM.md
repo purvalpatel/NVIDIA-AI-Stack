@@ -1,6 +1,8 @@
 
 Nvidia NIM :
 ----------
+- Reference - https://docs.nvidia.com/nim/large-language-models/latest/about-nim-llm/overview.html <br>
+
 - NVIDIA NIM is a collection of pre-built, optimized microservice containers that packages
 ```
 AI Models + Inference runtime (TensorRT-LLM + REST API ) + GPU Optimizations.
