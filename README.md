@@ -62,7 +62,7 @@ Kubernetes and container eco-system
 ### GPU Virtualization
 - [MIG](MIG.md)
 - [Time Slicing](time-slicing.md)
-- MPS
+- [MPS](#mps)
 - [vGPU](#vgpu)
 - SR-IOV (where supported)
 - GPU partitioning
@@ -94,8 +94,8 @@ Know,
 - [DCGM Exporter](DCGM-Exporter.md)
 - Prometheus
 - Grafana
-- Nsight Systems
-- Nsight Compute
+- [Nsight Systems](#nsight-systems)
+- [Nsight Compute](#nsight-compute)
 
 ### Networking
 - NVLink
@@ -184,6 +184,22 @@ Kubernetes add-on for detecting GPU features and label it with the node.
 ### Node feature discovery
 Kubernetes add-on for detecting hardware feature and label it with the node.
 
+### MPS
+Multi-process service
+```
++-----------------------------------------+
+|            MPS Server                    |
+|                                         |
+| Process A  Process B  Process C         |
+|      \         |         /              |
+|       \        |        /               |
+|     Shared CUDA Context                 |
++-----------------------------------------+
+```
+Instead of each process creating its own CUDA context:
+- One MPS Server owns the GPU context.
+- Multiple CUDA processes submit work through it.
+- The GPU schedules kernels from all processes simultaneously.
 
 ### DCGM
 - Monitoring tool
@@ -199,6 +215,14 @@ Kubernetes add-on for detecting hardware feature and label it with the node.
 - Specialized processor for data movement tasks.
 - Handles networking, storage, security workload to reduce overhead of CPU for this tasks.
 - Programmable with SDKs like `DOCA`.
+
+### Nsight Systems 
+- Where is my application spending time? (System-wide performance analysis)
+- Nsight Systems gives you a timeline view of everything happening on the system.
+
+### Nsight Compute
+- Why is this GPU kernel slow? (Individual kernel optimization)
+- Nsight Compute focuses on one CUDA kernel.
 
 #### Bluefield
 - Nvidia DPU Family
