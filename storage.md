@@ -44,3 +44,10 @@ while `Infiband`:
 - Reduce GPU load and cost
 - Supports large batch streaming and multi-node clusters.
 - Enable Realtime Data ingetion
+
+### NVSwitch, NVLink, Cluster Management
+- **NVSwitch** : High bandwidth GPU fabric, Connect multiple NVLink, Upto 8 GPUS Connect, Multiple GPU scaling
+- **NVLink** : High Speed GPU-to-GPU communication, 900GB/s
+- **Cluster management** : Up to 8 GPUS its GPU Cluster.
+<img width="841" height="449" alt="Screenshot from 2026-02-04 17-24-54" src="https://github.com/user-attachments/assets/385c64f6-45c2-42e2-8a98-247d8ba166cd" />
+
