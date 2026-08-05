@@ -38,7 +38,9 @@ hf download bartowski/moonshotai_Kimi-K2.6-GGUF \
 
 ```
 
-## Once Download start llama-cpp server with docker-compose.
+Once Download start llama-cpp server with docker-compose.
+
+### Create llama-cpp docker image.
 Dockerfile
 ```
 FROM rocm/dev-ubuntu-22.04:6.4
