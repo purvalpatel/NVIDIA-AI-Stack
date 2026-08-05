@@ -160,4 +160,4 @@ services:
     restart: unless-stopped
 ```
 
-Here i have AMD MI300X GPU with 4 cards.
+Here i have AMD MI300X GPU with 8 cards.
