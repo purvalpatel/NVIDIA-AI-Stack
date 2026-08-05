@@ -173,6 +173,25 @@ Know,
         - AI + Graphics + Video <br>
 - `B200` : Designed for future scale Gen AI. <br>
         - Blackwell architecture <br>
+
+### GPU instances on AWS/Azure:
+A100, H100: <br>
+- A100- Ampere architecture
+- H100 - Hopper architecture
+- Datacenter class, large scale AI training, HPC workloads.
+
+L4: Lightweight, Low-power, used in inferencing <br>
+
+Jetson - Robots, Drone, IoT based devices <br>
+
+AWS: <br>
+- p4d/p5 : A100/H100
+- g5 : L4
+
+Auzre: <br>
+- Nc-series - General purpose
+- Nd-series - V100, A100
+- Nv-series - Graphic based, not for AI
 ----
 
 ### vGPU
@@ -390,26 +409,6 @@ pip install --upgrade huggingface_hub
 ```
 hf download distilbert/distilbert-base-uncased
 ```
-----
-
-### GPU instances on AWS/Azure:
-A100, H100: <br>
-- A100- Ampere architecture
-- H100 - Hopper architecture
-- Datacenter class, large scale AI training, HPC workloads.
-
-L4: Lightweight, Low-power, used in inferencing <br>
-
-Jetson - Robots, Drone, IoT based devices <br>
-
-AWS: <br>
-- p4d/p5 : A100/H100
-- g5 : L4
-
-Auzre: <br>
-- Nc-series - General purpose
-- Nd-series - V100, A100
-- Nv-series - Graphic based, not for AI
 
 ----
 
