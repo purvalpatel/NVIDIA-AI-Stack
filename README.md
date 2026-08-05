@@ -9,7 +9,7 @@
 8. [NVIDIA NIM](Nvidia-NIM.md)
 9. [NeMo](NeMo.md)
 10. TensorRT
-11. NCCL
+11. [NCCL](#nccl)
 12. [Monitoring](#monitoring)
 13. [Storage](#storage)
 14. Security
@@ -481,6 +481,13 @@ Infra SDK's
 
 5. **NVIDIA Merlin**
 - Recommendation system
+
+----
+### NCCL
+
+- Nvidia Collective communications library
+- A specialized software library that enables high-speed, low-latency data transfer and communication between multiple NVIDIA GPUs and nodes.
+- Implements multi-node multi-GPU communications.
 
 ----
 
