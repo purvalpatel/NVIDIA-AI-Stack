@@ -474,13 +474,11 @@ Infra SDK's
 - For Speech recognisation
 - Text to speech
 
-
 3. **NVIDIA Meno for NLP**
 - FRamework for training and deploying custom LLMs.
 
-4.** NVIDIA clara**
+4. ** NVIDIA clara**
 - For Healthcare AI
-
 
 5. **NVIDIA Merlin**
 - Recommendation system
