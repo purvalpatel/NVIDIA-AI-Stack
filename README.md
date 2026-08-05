@@ -417,6 +417,8 @@ Auzre: <br>
 - AI supercomputers
 - Pre-optimized for tensorFlow, RAPIDS
 
+----
+
 ### Nvidia TAO
 - Train, Adapt, Optimize framework
 
@@ -428,6 +430,8 @@ Auzre: <br>
 - Configure training Spec ( hyperparametersm Augmentation )
 - Fine-tune model on your dataset
 - optimize (pruning, quantization )
+
+----
 
 ### Deepstream:
 - GPU accelrated streaming analytics tooolkit for NVIDIA
@@ -441,6 +445,7 @@ ingest -> Decode -> AI Inference -> postprocess -> Output
 ```
 - Connects to RAPIDS in readltime analysis
 
+----
 
 ### Realtime Pipeline:
 - Input : camera, videfile
@@ -449,9 +454,12 @@ ingest -> Decode -> AI Inference -> postprocess -> Output
 - Post-process : Draw boxes, count objects, filter events
 - Output: dashboard, databases, alerts
 
+----
 
 ### RAPIDS
 - Build on CUDA library
+
+----
 
 ### Nvidia Omniverse
 - Nvidia's Robotics Simulation platform
