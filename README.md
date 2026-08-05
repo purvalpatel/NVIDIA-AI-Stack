@@ -140,6 +140,7 @@ Know,
 - Pre-trained containers
 - Secured production ready assets
 
+-----
 
 ### Nvidia GPU Hardware architecture
 
@@ -172,17 +173,23 @@ Know,
         - AI + Graphics + Video <br>
 - `B200` : Designed for future scale Gen AI. <br>
         - Blackwell architecture <br>
+----
 
 ### vGPU
 - Software level partitioning
 - Hypervisor based
 - One physical GPU can be converted into multiple vGPUs and that vGPU can be assigned to VM, User, Containers.
 
-### GPU feature discovery
+----
+### Feature Discovery
+
+#### GPU feature discovery
 Kubernetes add-on for detecting GPU features and label it with the node.
 
-### Node feature discovery
+#### Node feature discovery
 Kubernetes add-on for detecting hardware feature and label it with the node.
+
+----
 
 ### MPS
 Multi-process service
@@ -201,13 +208,18 @@ Instead of each process creating its own CUDA context:
 - Multiple CUDA processes submit work through it.
 - The GPU schedules kernels from all processes simultaneously.
 
+----
+
 ### DCGM
 - Monitoring tool
 - Detects bottlenecks early
 - Prometheus + Grafana
+----
 
 ### Slurm
 **Slurm** - Mostly used in GPU job scheduling
+
+----
 
 ### DPU and Bluefield
 
@@ -237,6 +249,7 @@ Move heavy tasks networking/security/storage work from CPU to a dedicated DPU. S
 - Telemetry: Monitoring, Logging, Traffic analysis
 Improve GPU throughput.
 
+----
 
 ### Nvidia Eco-system & tools
 
@@ -249,6 +262,7 @@ Improve GPU throughput.
    - DGCM Exporter <br>
    - NGC Helm chart <br>
   
+----
 
 #### Troubleshooting:
 - **nvidia-smi**
@@ -257,7 +271,7 @@ Improve GPU throughput.
 - **Nvidia Nsight Compute** : Kernel level GPU profiling metrics.
 
 
-   
+----
 ## Below are some best inference runtimes:
 
 If you want **raw speed** → **TensorRT-LLM**. <br>
@@ -265,9 +279,10 @@ If you want **easy, stable APIs** → **vLLM or NIM**. <br>
 If you want **scalable production** → **Triton**. <br>
 If you want **local/offline** → **llama.cpp** / **Ollama**. <br>
 
+----
 
-Below is the typical architecture in terms of working with Nvidia AI Stack:
----------------------------------------------------
+### Below is the typical architecture in terms of working with Nvidia AI Stack:
+
 Training (NeMo Framework) -> Optimization (TensorRT) -> serving (Triton/NIM)  <br>
 
 ### Big Picture:
@@ -281,8 +296,9 @@ Training (NeMo Framework) -> Optimization (TensorRT) -> serving (Triton/NIM)  <b
 | 🧰 **Monitoring / Scaling** | **Kubernetes, Helm, ArgoCD** | MLOps / Platform Engineers | Manage and scale model deployments |
 
 
-There are 5 main types of LLM model files you will see:
----------------
+----
+
+### There are 5 main types of LLM model files you will see:
 | Format                  | File Example                              | What it is                      | Where It Comes From         | Can Run On                                                                               |
 | ----------------------- | ----------------------------------------- | ------------------------------- | --------------------------- | ---------------------------------------------------------------------------------------- |
 | **PyTorch Checkpoints** | `pytorch_model.bin` / `model.safetensors` | Raw weights                     | Hugging Face, Meta releases | **vLLM**, **PyTorch**, **Transformers**, **Triton**, **TensorRT-LLM (after conversion)** |
@@ -314,8 +330,9 @@ There are 5 main types of LLM model files you will see:
 | **Fine-tune or train**                           | **PyTorch / safetensors** | **PyTorch / Transformers**    |
 
 
-Real Flow of deploying model:
---------------------------
+----
+
+### Real Flow of deploying model:
 When we download a model from Hugging Face, it usually comes in:
 ```
 safetensors / .bin weights + config + tokenizer
@@ -357,9 +374,10 @@ TensorRT Engine (.plan)
 | **CPU only**                                | **ONNX Runtime**       |
 | **Laptop / mobile**                         | **GGUF + llama.cpp**   |
 
+----
 
 
-Install Huggingface-cli:
+### Install Huggingface-cli:
 ```
 apt install python3.10-venv
 python3 -m venv ~/hf-venv
@@ -368,15 +386,13 @@ pip install --upgrade huggingface_hub
 
 ```
 
-Download model from hf:
+### Download model from hf:
 ```
 hf download distilbert/distilbert-base-uncased
 ```
+----
 
-
-
-GPU instances on AWS/Zure:
----
+### GPU instances on AWS/Azure:
 A100, H100: <br>
 - A100- Ampere architecture
 - H100 - Hopper architecture
@@ -395,12 +411,13 @@ Auzre: <br>
 - Nd-series - V100, A100
 - Nv-series - Graphic based, not for AI
 
+----
 
 ### DGX Systems:
 - AI supercomputers
 - Pre-optimized for tensorFlow, RAPIDS
 
-## Nvidia TAO
+### Nvidia TAO
 - Train, Adapt, Optimize framework
 
 - Is a framework for customizing vision foundation models for high accuracy and fine-tuning microservices
@@ -412,7 +429,7 @@ Auzre: <br>
 - Fine-tune model on your dataset
 - optimize (pruning, quantization )
 
-## Deepstream:
+### Deepstream:
 - GPU accelrated streaming analytics tooolkit for NVIDIA
 - Optimized for realtime video and sensor data
 - Camera, Traffic monitoring, theft detection, license, numberplat scaning
@@ -436,7 +453,7 @@ ingest -> Decode -> AI Inference -> postprocess -> Output
 ### RAPIDS
 - Build on CUDA library
 
-## Nvidia Omniverse
+### Nvidia Omniverse
 - Nvidia's Robotics Simulation platform
 
 Infra SDK's
@@ -460,9 +477,9 @@ Infra SDK's
 5. **NVIDIA Merlin**
 - Recommendation system
 
+----
 
-Some Common used Terms in Nvidia AI Stack
----------------------
+### Some Common used Terms in Nvidia AI Stack
 | Key | Value | 
 | -- | -- |
 | GPU | GPU Processing Unit |
