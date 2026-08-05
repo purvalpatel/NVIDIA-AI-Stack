@@ -72,7 +72,7 @@ Kubernetes and container eco-system
 - [TensorRT-LLM](tensortRT_LLM.md)
 - Triton Inference Server
 - Ollama
-- llama.cpp
+- [llama.cpp](https://github.com/purvalpatel/NVIDIA-AI-Stack/blob/main/model-deployment-engine.md#llamacpp)
 - KServe
 - SGLang
 Know,
