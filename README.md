@@ -43,7 +43,7 @@ Kubernetes and container eco-system
         - Advanced configuration: Container Device interface (CDI)
 - NVIDIA Container Runtime
 - [Nvidia CDI](Nvidia-CDI.md)
-- OCI Hooks
+- [OCI Hooks](#oci-hooks)
 - Docker Runtime
 - Containerd runtime
 
@@ -139,6 +139,17 @@ Know,
 - Optimized
 - Pre-trained containers
 - Secured production ready assets
+-----
+
+### OCI Hooks
+OCI = Open Container Initiative.
+
+
+With NVIDIA Container Toolkit:
+```
+docker run --rm --gpus all nvidia/cuda:12.6.0-base-ubuntu22.04 nvidia-smi
+```
+NVIDIA's runtime integration modifies the container configuration so the required GPU resources are exposed.
 
 -----
 
