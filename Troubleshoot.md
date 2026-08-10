@@ -27,3 +27,8 @@ Also,
 nvidia-smi nvlink -s
 ```
 If still not works then reboot the server.
+
+### Takeaway:
+- **Multicast memory**: GPU memory that can be accessed by multiple GPU through NVLink/NVSwitch/NVSwitch fabric.
+- **NVLS ( NVLink Sharp )** : NVLS uses NVLink infrastructure to accelare collective operations.
+  After performing all tasks by all GPUs it needs to combine useing AllReduce. here NVLS comes into the picture.
