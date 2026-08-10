@@ -26,6 +26,8 @@ Also,
 ```
 nvidia-smi nvlink -s
 ```
+<img width="796" height="456" alt="image" src="https://github.com/user-attachments/assets/3309f6a8-24fa-4421-967e-36072f2dbd21" />
+
 If still not works then reboot the server.
 
 ### Takeaway:
