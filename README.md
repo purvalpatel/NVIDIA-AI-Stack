@@ -539,3 +539,23 @@ Infra SDK's
 
 <img width="1231" height="1635" alt="Untitled Diagram drawio(4)" src="https://github.com/user-attachments/assets/918b8526-c0a5-46ca-bb91-420eeb029261" />
 
+## Complete path is:
+
+```
+Physical NVIDIA GPU → NVIDIA Kernel Driver →  NVML → Nvidia Container Toolkit → Container runtime ( containerd, CRI-o, docker) -> Nvidia device plugin → Kubernetes API/Scheduler → POD → Application → CUDA → GPU
+```
+
+| Component                    | Main responsibility                              |
+| ---------------------------- | ------------------------------------------------ |
+| **NVIDIA Driver**            | Communicates with physical GPU                   |
+| **NVML**                     | GPU management/discovery/monitoring API          |
+| **NVIDIA Container Toolkit** | Makes NVIDIA GPUs usable inside containers       |
+| **containerd/Docker**        | Creates and manages containers                   |
+| **NVIDIA Device Plugin**     | Advertises GPUs to Kubernetes and allocates them |
+| **kubelet**                  | Manages containers on the node                   |
+| **Scheduler**                | Decides which node gets the Pod                  |
+| **API Server**               | Stores/serves Kubernetes state                   |
+| **CUDA**                     | Allows applications to execute GPU workloads     |
+| **GPU**                      | Performs the actual computation                  |
+
+
