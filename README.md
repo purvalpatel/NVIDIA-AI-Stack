@@ -8,7 +8,7 @@
 7. [Nvidia AI Enterprise](#nvidia-ai-enterprise)
 8. [NVIDIA NIM](Nvidia-NIM.md)
 9. [NeMo](NeMo.md)
-10. TensorRT
+10. [TensorRT](TensorRT.md)
 11. [NCCL](#nccl)
 12. [Monitoring](#monitoring)
 13. [Storage](#storage)
