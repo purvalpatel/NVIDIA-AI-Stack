@@ -233,6 +233,11 @@ Multi-process service
 |     Shared CUDA Context                 |
 +-----------------------------------------+
 ```
+
+Allows **multiple CUDA processes** to share the same **physical NVIDIA GPUs**.
+
+Process share the same physcial GPU rather then getting independent hardware partitions.
+
 Instead of each process creating its own CUDA context:
 - One MPS Server owns the GPU context.
 - Multiple CUDA processes submit work through it.
