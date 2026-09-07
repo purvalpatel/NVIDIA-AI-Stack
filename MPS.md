@@ -56,3 +56,14 @@ ps -ef | grep mps
 
 ### Run CUDA applications
 ```
+
+One of the useful feature of MPS feature is limiting amount of GPU compute available to a client.
+```
+GPU
+│
+├── Job A → ~50% compute
+└── Job B → ~50% compute
+```
+
+### Stop MPS
+echo "quit" | nvidia-cuda-mps-control
