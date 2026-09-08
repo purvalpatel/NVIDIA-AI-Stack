@@ -48,3 +48,11 @@ Input → Is the user's request allowed? <br>
 LLM processing → Generate response. <br>
 Output → Is the generated response safe? <br>
 Return response → Send it to the user. <br>
+
+
+Process of automatically or manually reviewing user-generated or AI-generated content to identify and filter content that violates policies.
+
+### tool for Content moderation prevention
+1. Nvidia Nemo Guardrails
+2. Custom ML models
+3. OpenAI Moderation.
