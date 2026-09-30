@@ -23,6 +23,9 @@ Understand NVIDIA hardware.
 - Fore more details [Nvidia GPU Hardware architecture](#nvidia-gpu-hardware-architecture)
 - **HGX** is Building platform. think like Dell, HP, Lenovo can build server around an NVIDIA HGX Platform.
 - **DGX** is Complete product. NVIDIA takes the complete GPU product and provides the complete system. so when you buy DGX system, you buy complete NVIDIA Engineered system. rather than just GPU platform.
+- **NVLink/NVSwitch** → GPU-to-GPU communication inside a server
+- **InfiniBand** → server-to-server communication between nodes
+- **Fabric Manager** → manages the NVSwitch/NVLink fabric, not the InfiniBand network
 
 ### Nvidia Driver stack
 - NVIDIA Driver
