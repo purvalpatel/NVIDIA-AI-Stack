@@ -12,7 +12,7 @@
 11. [NCCL](#nccl)
 12. [Monitoring](#monitoring)
 13. [Storage](#storage)
-14. Security
+14. [Security](https://github.com/purvalpatel/LLM-Security)
 15. [Performance Profiling](#performance-profiling)
 16. [Cluster management](#cluster-management)
 
