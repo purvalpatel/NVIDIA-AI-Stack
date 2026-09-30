@@ -18,9 +18,11 @@
 
 ### GPU Hardware Layer
 Understand NVIDIA hardware.
-- PCIe vs SXM, Tensor Cores, CUDA Cores, NVLink, NVSwitch, Grace CPU, Grace Hopper, H100, H200, B200, RTX Pro GPU
+- PCIe vs SXM, Tensor Cores, CUDA Cores, NVLink, NVSwitch, Grace CPU, Grace Hopper, H100, H200, B200, B300, RTX Pro GPU
 - GPU memory, HBM, Bandwidth, FP32, FP16, BF16, INT8, FP8
 - Fore more details [Nvidia GPU Hardware architecture](#nvidia-gpu-hardware-architecture)
+- **HGX** is Building platform. think like Dell, HP, Lenovo can build server around an NVIDIA HGX Platform.
+- **DGX** is Complete product. NVIDIA takes the complete GPU product and provides the complete system. so when you buy DGX system, you buy complete NVIDIA Engineered system. rather than just GPU platform.
 
 ### Nvidia Driver stack
 - NVIDIA Driver
