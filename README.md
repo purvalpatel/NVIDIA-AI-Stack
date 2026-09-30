@@ -160,18 +160,18 @@ NVIDIA's runtime integration modifies the container configuration so the require
 
 ### Nvidia GPU Hardware architecture
 
-- **SMs** - Core building blocks of GPU <br>
+- **SMs** → Core building blocks of GPU <br>
         - Handle thread execution and compute operation <br>
         - A100 GPU - has 108 SMs, H100 Has 132 SMs. <br>
         - Each SMs Runs threads and parallalism <br>
 
-- **TensorCores** - Built for deep learning <br>
+- **TensorCores** → Built for deep learning <br>
         - Accelarate F16, BF16, INT8, TF32, FP8 <br>
         - Used in training + Inference <br>
         - Specialized cores for matrix <br>
 
   SMs + Tensor Cores Accelarate AI <br>
-- **NVLink** - High Speed GPU into connect faster than PCIs. <br>
+- **NVLink** → High Speed GPU into connect faster than PCIs. <br>
         - Used in DGX and Suprtcomputer <br>
         - Supports multi-model and multi-GPU. <br>
 
@@ -197,8 +197,8 @@ NVIDIA's runtime integration modifies the container configuration so the require
 
 ### GPU instances on AWS/Azure:
 A100, H100: <br>
-- A100- Ampere architecture
-- H100 - Hopper architecture
+- A100 → Ampere architecture
+- H100 → Hopper architecture
 - Datacenter class, large scale AI training, HPC workloads.
 
 L4: Lightweight, Low-power, used in inferencing <br>
@@ -210,9 +210,9 @@ AWS: <br>
 - g5 : L4
 
 Auzre: <br>
-- Nc-series - General purpose
-- Nd-series - V100, A100
-- Nv-series - Graphic based, not for AI
+- Nc-series → General purpose
+- Nd-series → V100, A100
+- Nv-series → Graphic based, not for AI
 ----
 
 ### vGPU
